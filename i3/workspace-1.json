@@ -1,0 +1,94 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.50625,
+    "type": "con",
+    "nodes": [
+        {
+            // splith split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splith",
+            "marks": [],
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 0,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 1042,
+                       "width": 631,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "marks": [],
+                    "name": "~",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       // "class": "^kitty$",
+                       // "instance": "^kitty$",
+                       // "machine": "^ideapadg\\-vinzk$",
+                       // "title": "^\\~$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1042,
+               "width": 1908,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "~",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^kitty$",
+               // "instance": "^kitty$",
+               // "machine": "^ideapadg\\-vinzk$",
+               // "title": "^\\~$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1042,
+       "width": 631,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "btop",
+    "percent": 0.49375,
+    "swallows": [
+       {
+       // "class": "^kitty$",
+       // "instance": "^kitty$",
+       // "machine": "^ideapadg\\-vinzk$",
+       // "title": "^btop$"
+       }
+    ],
+    "type": "con"
+}
+
