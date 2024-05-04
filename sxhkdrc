@@ -23,8 +23,8 @@ super + shift + {e,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }q
-	bspc node -{c,k}
+super + shift + q
+	bspc node -c
 
 # alternate between the tiled and monocle layout
 super + m
@@ -129,9 +129,16 @@ super + {Left,Down,Up,Right}
 XF86MonBrightness{Up,Down}
 	brightnessctl s 10{+,-}
 
-# audio
+# volume control
 XF86Audio{Raise,Lower}Volume
 	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# play/pause, prev/next
+XF86Audio{Play,Next,Prev}
+	playerctl {play-pause,next,previous}
 
 # screenshot
 Print
