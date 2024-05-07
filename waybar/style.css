@@ -1,0 +1,69 @@
+* {
+	font-family: 'JetBrains Mono';
+	font-size: 12px
+}
+
+window#waybar {
+	background:rgba(13, 12, 18, 0.89);
+	color:white;
+}
+
+#backlight {
+/*	background: #64727D; */
+	padding: 0px 12px;
+}
+
+#battery {
+/*	background: #123466; */
+	padding: 0px 13px;
+}
+
+#bluetooth {
+/*	background:#654321; */
+	padding: 0px 13px;
+}
+
+#cpu {
+/*	background: #1f1e1e; */
+	padding: 0px 13px;
+}
+
+#disk { 
+/*	background: #1f1e3e; */
+	padding: 0px 10px;
+}
+
+#memory {
+/*	background: #1f1e2d; */
+	padding: 0px 13px;
+}
+
+#network {
+/*	background: #314159; */
+	padding: 0px 10px;
+}
+
+
+#tray {
+	padding: 0px 20px;
+}
+
+#window {
+	padding: 0px 28px;
+}
+
+#wireplumber {
+/*	background: #299999; */
+	padding: 0px 14px;
+}
+
+#workspaces button {
+	padding: 0px 2px;
+	color: grey;
+}
+
+#workspaces button.active {
+	color: white;
+}
+
+

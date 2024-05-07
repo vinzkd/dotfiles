@@ -1,0 +1,89 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "height": 29,
+    "margin-top": 3,
+    "margin-left": 3,
+    "margin-right": 3,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["disk", "memory", "cpu", "battery", "backlight", "wireplumber", "bluetooth",  "network", "tray"],
+
+    // modules
+    "custom/space": {"format": "   "},
+
+
+    "hyprland/window": {
+        "max-length": 80
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["",""]
+},
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""],
+	"format-charging": "{capacity}% <span font='12' rise='-3pt'></span>"
+    },
+
+    "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": "{status} <span font='11' rise='-3pt'></span>",
+	"format-disabled": "off <span font='11' rise='-3pt'></span>", // an empty format will hide the module
+	"format-connected": "{num_connections} <span font='11' rise='-3pt'></span>",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
+    "clock": {
+	"format": "{:%A  %I:%M %p}",
+        "format-alt": "{:%Y/%m/%d  %I:%M %p}"
+    },
+   
+    "cpu": {
+        "interval": 10,
+        "format": "{}% ",
+        "max-length": 10
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "{free} <span rise='-1pt'> </span>",
+        "path": "/"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "{}% ",
+        "max-length": 10
+    },
+
+    "network": {
+       "interface": "wlp61s0",
+       "format": "",
+       "format-wifi": "{signalStrength}%   ",
+       "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+       "format-disconnected": "", //An empty format will hide the module.
+       "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+       "tooltip-format-ethernet": "{ifname} ",
+       "tooltip-format-disconnected": "Disconnected",
+       "max-length": 50
+    },
+
+    "tray": {
+       "icon-size": 21,
+       "spacing": 10
+    },
+
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+	"format-muted": "--- ",
+	"on-click": "helvum",
+	"format-icons": ["", "", ""]
+    }
+}
