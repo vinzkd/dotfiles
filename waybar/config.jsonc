@@ -7,33 +7,38 @@
     "margin-right": 3,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["disk", "memory", "cpu", "battery", "backlight", "wireplumber", "bluetooth",  "network", "tray"],
+    "modules-right": ["disk", "memory", "cpu", "battery", "backlight", "wireplumber", "bluetooth",  "network"],
 
     // modules
-    "custom/space": {"format": "   "},
-
 
     "hyprland/window": {
         "max-length": 80
     },
 
+    "hyprland/workspaces": {
+  	"format": "{name}",
+  	"on-click": "activate",
+  	"sort-by-number": true
+    },
+
     "backlight": {
         "device": "intel_backlight",
-        "format": "{percent}% {icon}",
+        "format": "{percent}% <span font='9' color=\"#e0f9ff\" >{icon}</span>",
+	"tooltip-format": "{percent}% {icon}",
         "format-icons": ["",""]
-},
+    },
 
     "battery": {
-        "format": "{capacity}% {icon}",
+        "format": "{capacity}% <span color=\"#93faf0\">{icon}</span>",
         "format-icons": ["", "", "", "", ""],
-	"format-charging": "{capacity}% <span font='12' rise='-3pt'></span>"
+	"format-charging": "{capacity}% <span font='12' rise='-3pt' color=\"#e4f2aa\"></span>"
     },
 
     "bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-	"format": "{status} <span font='11' rise='-3pt'></span>",
-	"format-disabled": "off <span font='11' rise='-3pt'></span>", // an empty format will hide the module
-	"format-connected": "{num_connections} <span font='11' rise='-3pt'></span>",
+	"format": "{status} <span font='11' rise='-3pt' color=\"#7dcfff\"></span>",
+	"format-disabled": "off <span font='11' color=\"#787878\" rise='-3pt'></span>", // an empty format will hide the module
+	"format-connected": "{num_connections} <span font='11' color=\"#7dcfff\" rise='-3pt'></span>",
 	"tooltip-format": "{controller_alias}\t{controller_address}",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
@@ -46,26 +51,29 @@
    
     "cpu": {
         "interval": 10,
-        "format": "{}% ",
+        "format": "{}% <span color=\"#93faf0\">{icon}</span>",
+	"format-icons": [""],
         "max-length": 10
     },
 
     "disk": {
         "interval": 30,
-        "format": "{free} <span rise='-1pt'> </span>",
+        "format": "{free} <span rise='-1pt' color=\"#f6c4ff\"> </span>",
+	"format-icons": [""],
         "path": "/"
     },
 
     "memory": {
         "interval": 30,
-        "format": "{}% ",
+        "format": "{}% <span color=\"#f6c4ff\">{icon}</span>",
+	"format-icons": [""],
         "max-length": 10
     },
 
     "network": {
        "interface": "wlp61s0",
        "format": "",
-       "format-wifi": "{signalStrength}%   ",
+       "format-wifi": "{signalStrength}% <span color=\"#7dcfff\"></span>",
        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
        "format-disconnected": "", //An empty format will hide the module.
        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -81,8 +89,8 @@
     },
 
     "wireplumber": {
-        "format": "{volume}% {icon}",
-	"format-muted": "--- ",
+        "format": "{volume}% <span color=\"#e0f9ff\" rise='1pt'>{icon}</span>",
+	"format-muted": "--- <span color=\"#787878\" rise='0pt'></span>",
 	"on-click": "helvum",
 	"format-icons": ["", "", ""]
     }

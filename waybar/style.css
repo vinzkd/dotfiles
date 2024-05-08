@@ -1,69 +1,102 @@
 * {
-	font-family: 'JetBrains Mono';
-	font-size: 12px
+    border: none;
+    font-family: JetBrains Mono;
+    font-size: 12px;
+    color: #ffffff;
+    border-radius: 16px;
 }
 
+window {
+	/*font-weight: bold;*/
+}
 window#waybar {
-	background:rgba(13, 12, 18, 0.89);
-	color:white;
+    background: rgba(13, 12, 18, 0.00);
 }
 
-#backlight {
-/*	background: #64727D; */
-	padding: 0px 12px;
+/*-----module groups----*/
+.modules-right {
+	background-color: rgba(13,12,18,0.85);
+    margin: 0px 0px 0px 0;
+    padding: 0px 12px;
 }
-
-#battery {
-/*	background: #123466; */
-	padding: 0px 13px;
+.modules-center {
+	background-color: rgba(13,12,18,0.85);
+    margin: 0px 0 0 0;
 }
-
-#bluetooth {
-/*	background:#654321; */
-	padding: 0px 13px;
-}
-
-#cpu {
-/*	background: #1f1e1e; */
-	padding: 0px 13px;
-}
-
-#disk { 
-/*	background: #1f1e3e; */
-	padding: 0px 10px;
-}
-
-#memory {
-/*	background: #1f1e2d; */
-	padding: 0px 13px;
-}
-
-#network {
-/*	background: #314159; */
-	padding: 0px 10px;
+.modules-left {
+    margin: 0px 0 0 5px;
+	background-color: rgba(0,119,179,0.0);
 }
 
 
-#tray {
-	padding: 0px 20px;
-}
-
-#window {
-	padding: 0px 28px;
-}
-
-#wireplumber {
-/*	background: #299999; */
-	padding: 0px 14px;
+/*-----modules indv----*/
+#workspaces {
+	padding: 0px 0px;
+	color: orange;
+	background-color: rgba(12,13,21,0.8);
 }
 
 #workspaces button {
-	padding: 0px 2px;
-	color: grey;
+	padding: 0px 1px;
+	color: orange;
 }
 
 #workspaces button.active {
-	color: white;
+    margin: 0px 1px 0px 1px;
+    padding: 0px 0px;
+    color: orange;
+    background-color: rgba(60,60,60,0.8);
 }
 
 
+#window {
+	margin: 0px 0px 0 40px;
+	padding: 0px 10px;
+	background-color: rgba(18,22,22,0.8);
+}
+
+#clock {
+       padding: 0px 16px;
+       background-color: rgba(12,13,41,0.8);
+}
+
+#backlight {
+	margin: 0px 15px 0px 15px;
+}
+
+#bluetooth {
+	margin: 0px 15px 0px 15px;
+}
+
+#battery {
+	margin: 0px 15px 0px 15px;
+}
+
+#cpu {
+	margin: 0px 15px 0px 15px;
+}
+
+#memory {
+	margin: 0px 15px 0px 15px;
+}
+
+#temperature {
+	margin: 0px 15px 0px 15px;
+}
+
+#network {
+	margin: 0px 15px 0px 0px;
+}
+
+#wireplumber {
+	margin: 0px 15px 0px 15px;
+}
+
+#tray {
+	margin: 0px 40px 0px 5px;
+	background-color: rgba(18,22,32,0.8);
+}
+
+#tray menu {
+	background-color: rgba(12,13,41,0.95);
+}
