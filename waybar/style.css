@@ -76,6 +76,10 @@ window#waybar {
 	margin: 0px 15px 0px 15px;
 }
 
+#disk {
+	margin: 0px 15px 0px 0px;
+}
+
 #memory {
 	margin: 0px 15px 0px 15px;
 }

@@ -1,7 +1,10 @@
+/* padding:  up left down right  */
+
 window {
 margin: 0px;
 border: 0px solid red;
-font: monospace;
+font: JetBrains Mono;
+font-size: 20px;
 background-color: rgba(13,12,18,0.0);
 }
 
@@ -9,7 +12,7 @@ background-color: rgba(13,12,18,0.0);
 margin: 0px;
 border: 0px solid black;
 color: #fdfdfd;
-background-color: rgba(30,30,34,0.9);
+background-color: rgba(20,20,34,0.9);
 }
 
 #inner-box {
@@ -19,9 +22,10 @@ background-color: rgba(13,12,18,0.0);
 }
 
 #outer-box {
-margin: 5px;
+margin: 0px;
+padding: 10px 7px 0px 7px;
 border: 0px solid green;
-background-color: rgba(13,12,18,0.0);
+background-color: rgba(13,12,18,0.8);
 }
 
 #scroll {
