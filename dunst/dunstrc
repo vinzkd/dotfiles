@@ -1,9 +1,10 @@
 [global]
+width = (0,540)
 frame_width = 1
-frame_color = "#4d7192"
+frame_color = "#7dcfff"
 separator_color= frame
 
-font = JetBrains Mono 8
+font = JetBrains Mono 16
 
 [urgency_low]
 background = "#12161f"
