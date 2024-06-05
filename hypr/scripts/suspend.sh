@@ -1,3 +1,3 @@
 #!/bin/bash
-swayidle -w \
-timeout 900 'systemctl suspend' 
+#swayidle -w \
+#timeout 3600 'systemctl suspend' 

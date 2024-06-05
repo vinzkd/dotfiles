@@ -45,7 +45,7 @@ window#waybar {
     margin: 0px 1px 0px 1px;
     padding: 0px 0px;
     color: orange;
-    background-color: rgba(60,60,60,0.8);
+    background-color: rgba(20,20,20,0.8);
 }
 
 
@@ -89,7 +89,7 @@ window#waybar {
 }
 
 #network {
-	margin: 0px 15px 0px 0px;
+	margin: 0px 15px 0px 10px;
 }
 
 #wireplumber {

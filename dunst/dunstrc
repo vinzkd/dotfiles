@@ -4,7 +4,7 @@ frame_width = 1
 frame_color = "#7dcfff"
 separator_color= frame
 
-font = JetBrains Mono 16
+font = JetBrains Mono 14
 
 [urgency_low]
 background = "#12161f"

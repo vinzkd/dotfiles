@@ -20,9 +20,11 @@
   	"on-click": "activate",
   	"sort-by-number": true,
 	"format-icons": {
-		"10": " ",
-		"11": " ",
-		"12": " "
+		"10": "   ",
+		"11": "   ",
+		"12": "   ",
+		"active": "  ",
+		"default": "  "
 	}
     },
 
@@ -94,9 +96,9 @@
     },
 
     "wireplumber": {
-        "format": "{volume}% <span color=\"#e0f9ff\" rise='1pt'>{icon}</span>",
+        "format": "{volume}% <span font='12' color=\"#e0f9ff\" rise='-3pt'>{icon}</span>",
 	"format-muted": "--- <span color=\"#787878\" rise='0pt'></span>",
 	"on-click": "helvum",
-	"format-icons": ["", "", ""]
+	"format-icons": ["", "", ""]
     }
 }
