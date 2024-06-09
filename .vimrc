@@ -22,13 +22,14 @@ set term=kitty
 filetype plugin indent on
 syntax on
 
+set background=dark 
+
 set cursorline
 set cursorlineopt=number
 
-" set cursorcolumn
 
 set ruler
-
 set number
+
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGray
 highlight CursorLineNr term=bold cterm=NONE ctermfg=LightGray
