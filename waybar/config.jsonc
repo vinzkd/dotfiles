@@ -1,11 +1,11 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top",
-    "height": 29,
-    "margin-top": 3,
-    "margin-left": 3,
-    "margin-right": 3,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "modules-left": ["hyprland/workspaces", "hyprland/window","sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": ["disk", "memory", "cpu", "battery", "backlight", "wireplumber", "bluetooth",  "network"],
 
@@ -21,11 +21,28 @@
   	"on-click": "activate",
   	"sort-by-number": true,
 	"format-icons": {
+		"10": "    ",
+		"11": "    "
+	}
+    },
+
+    "sway/window": {
+	"format": "<span color=\"#DDDFFF\">{title}</span>",
+        "max-length": 80
+    },
+
+    "sway/mode": {
+	    "format": "{}",
+	    "max-length": 50
+    },
+
+    "sway/workspaces": {
+  	"format": "{icon}",
+  	"on-click": "activate",
+  	"sort-by-number": true,
+	"format-icons": {
 		"10": "   ",
-		"11": "   ",
-		"12": "   ",
-		"active": "  ",
-		"default": "  "
+		"11": "   "
 	}
     },
 
