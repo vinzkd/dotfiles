@@ -22,7 +22,7 @@
   	"sort-by-number": true,
 	"format-icons": {
 		"10": "    ",
-		"11": "    "
+		"11": "<span rise='1pt'>    </span>"
 	}
     },
 
@@ -75,7 +75,7 @@
 
     "clock": {
 	"format": "<span color=\"#DDDFFF\">{:%A  %I:%M %p}</span>",
-        "format-alt": "{:%Y/%m/%d  %I:%M %p}"
+        "format-alt": "<span color=\"#DDDFFF\">{:%Y/%m/%d  %I:%M %p}</span>"
     },
    
     "cpu": {
