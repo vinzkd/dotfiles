@@ -234,5 +234,6 @@ smart_gaps on
 # Launch apps
 exec dunst
 exec waybar
+exec fastfetch
 
 include /etc/sway/config.d/*
