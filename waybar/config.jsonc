@@ -5,9 +5,10 @@
     "margin-left": 0,
     "margin-right": 0,
     "margin-bottom": 0,
-    "modules-left": ["hyprland/workspaces", "hyprland/window","sway/workspaces", "sway/mode", "sway/window"],
+    "height": 30,
+    "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "cpu", "memory", "disk"],
     "modules-center": ["clock"],
-    "modules-right": ["disk", "memory", "cpu", "battery", "backlight", "wireplumber", "bluetooth",  "network"],
+    "modules-right": ["temperature", "battery", "backlight", "wireplumber", "bluetooth",  "network" ],
 
     // modules
 
@@ -17,13 +18,14 @@
     },
 
     "hyprland/workspaces": {
+  	// "format": "<span color=\"#c9d0ff\">{name}</span>",
   	"format": "{icon}",
+    "format-icons": {
+      "11": "  ",
+      "12": "  "
+    },
   	"on-click": "activate",
-  	"sort-by-number": true,
-	"format-icons": {
-		"10": "    ",
-		"11": "<span rise='1pt'>    </span>"
-	}
+  	"sort-by-number": true
     },
 
     "sway/window": {
@@ -48,53 +50,64 @@
 
     "backlight": {
         "device": "intel_backlight",
-        "format": "{percent}% <span font='9' color=\"#e0f9ff\" >{icon}</span>",
-	"tooltip-format": "{percent}% {icon}",
+        "format": "<span font='9'>{icon}</span> {percent}%",
+	      "tooltip-format": "{percent}% {icon}",
         "format-icons": ["",""]
     },
 
     "battery": {
-	"states": {
-		"warning": 20
-	},
-        "format": "<span color=\"#93faf0\">{capacity}%</span> <span color=\"#93faf0\">{icon}</span>",
-	"format-warning": "<span color=\"#FF000D\">{capacity}%</span> <span color=\"#FF000D\">{icon}</span>",
-        "format-icons": ["", "", "", "", ""],
-	"format-charging": "<span color=\"#e4f2aa\">{capacity}%</span> <span font='12' rise='-3pt' color=\"#e4f2aa\"></span>"
+	      "states": {
+	    	"warning": 20,
+        "low": 60
+	   },
+        "format": "<span font='9' rise='1pt'>{icon}</span> {capacity}%",
+      	"format-charging": "<span font='12' rise='-4pt'></span> {capacity}%",
+        "format-low": "<span font='9'>{icon}</span> {capacity}%",
+        "format-warning": "<span font='9'>{icon}</span> {capacity}%",
+        "format-icons": ["", "", "", "", ""]
     },
 
     "bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-	"format": "<span color=\"#7dcfff\">{status}</span> <span font='11' rise='-3pt' color=\"#7dcfff\"></span>",
-	"format-disabled": "<span color=\"#787878\">off</span> <span font='11' color=\"#787878\" rise='-3pt'></span>", // an empty format will hide the module
-	"format-connected": "<span color=\"#7dcfff\">{num_connections}</span> <span font='11' color=\"#7dcfff\" rise='-3pt'></span>",
+	"format": "<span font='11' rise='-3pt'></span> <span>{status}</span>",
+	"format-disabled": "<span font='11' rise='-3pt'></span> off", // an empty format will hide the module
+	"format-connected": "<span font='11' rise='-3pt'></span> {num_connections}",
 	"tooltip-format": "{controller_alias}\t{controller_address}",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
     },
 
     "clock": {
-	"format": "<span color=\"#DDDFFF\">{:%A  %I:%M %p}</span>",
-        "format-alt": "<span color=\"#DDDFFF\">{:%Y/%m/%d  %I:%M %p}</span>"
+	      "format": "{:%a %b %d  %I:%M %p}",
+        "format-alt": "{:%m/%d  %I:%M %p}"
     },
    
     "cpu": {
         "interval": 10,
-        "format": "<span color=\"#93faf0\">{}%</span> <span color=\"#93faf0\">{icon}</span>",
-	"format-icons": [""],
+        "format": "<span font='11' rise='-3pt'>{icon}</span> {}%",
+	      "format-icons": [""],
         "max-length": 10
     },
 
+    "custom/icon": {
+	    "format": ""
+    },
+
+   "custom/separator": {
+	    "format": "|"
+    },
+
+
     "disk": {
         "interval": 30,
-        "format": "<span color=\"#f6c4ff\">{free}</span> <span rise='-1pt' color=\"#f6c4ff\"> </span>",
-	"format-icons": [""],
+        "format": "<span font='11' rise='-3pt'></span> {specific_free:0.0f} GB",
+	"unit": "GB",
         "path": "/"
     },
 
     "memory": {
         "interval": 30,
-        "format": "<span color=\"#f6c4ff\">{}%</span> <span color=\"#f6c4ff\">{icon}</span>",
+        "format": "<span font='9' rise='1pt'>{icon}</span> {}%",
 	"format-icons": [""],
         "max-length": 10
     },
@@ -102,7 +115,7 @@
     "network": {
        "interface": "wlp61s0",
        "format": "",
-       "format-wifi": "<span color=\"#7dcfff\">{signalStrength}%</span> <span color=\"#7dcfff\"></span>",
+       "format-wifi": "<span font='9' rise='1pt' color=\"#7dcfff\"></span> <span color=\"#7dcfff\">{signalStrength}%</span>",
        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
        "format-disconnected": "", //An empty format will hide the module.
        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -112,15 +125,24 @@
        "max-length": 50
     },
 
+    "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 70,
+    "format-critical": "<span font='9' rise='1pt'color=\"#93faf0\"></span> <span color=\"#93faf0\">{temperatureC}°C</span>",
+    "format": "<span font='9' rise='1pt' color=\"#93faf0\"></span> <span color=\"#93faf0\">{temperatureC}°C</span>"
+
+     },
+
     "tray": {
        "icon-size": 21,
        "spacing": 10
     },
 
     "wireplumber": {
-        "format": "<span color=\"#e0f9ff\">{volume}%</span> <span font='12' color=\"#e0f9ff\" rise='-3pt'>{icon}</span>",
-	"format-muted": "<span color=\"#787878\">---</span> <span color=\"#787878\" rise='0pt'></span>",
-	"on-click": "helvum",
-	"format-icons": ["", "", ""]
+        "format": "<span font='12' color=\"#e0f9ff\" rise='-4pt'>{icon}</span> <span color=\"#e0f9ff\">{volume}%</span>",
+	      "format-muted": "<span font='12' color=\"#787878\" rise='-2pt'></span> <span color=\"#787878\">---</span>",
+      	"on-click": "helvum",
+	      "format-icons": ["", "", ""]
     }
 }
