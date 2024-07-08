@@ -1,0 +1,123 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "height": 28,
+    "modules-left": ["hyprland/workspaces", "sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["disk", "memory", "cpu", "battery", "backlight", "wireplumber", "bluetooth",  "network"],
+
+    // modules
+
+    "hyprland/window": {
+	"format": "<span color=\"#DDDFFF\">{title}</span>",
+        "max-length": 80
+    },
+
+    "hyprland/workspaces": {
+  	"format": "{icon}",
+  	"on-click": "activate",
+  	"sort-by-number": true
+    },
+
+    "sway/window": {
+	"format": "<span color=\"#DDDFFF\">{title}</span>",
+        "max-length": 80
+    },
+
+    "sway/mode": {
+	    "format": "{}",
+	    "max-length": 50
+    },
+
+    "sway/workspaces": {
+  	"format": "{icon}",
+  	"on-click": "activate",
+  	"sort-by-number": true,
+	"format-icons": {
+		"10": "   ",
+		"11": "   "
+	}
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% <span font='9' color=\"#e0f9ff\" >{icon}</span>",
+	"tooltip-format": "{percent}% {icon}",
+        "format-icons": ["",""]
+    },
+
+    "battery": {
+	"states": {
+		"warning": 20
+	},
+        "format": "<span color=\"#93faf0\">{capacity}%</span> <span color=\"#93faf0\">{icon}</span>",
+	"format-warning": "<span color=\"#FF000D\">{capacity}%</span> <span color=\"#FF000D\">{icon}</span>",
+        "format-icons": ["", "", "", "", ""],
+	"format-charging": "<span color=\"#e4f2aa\">{capacity}%</span> <span font='12' rise='-3pt' color=\"#e4f2aa\"></span>"
+    },
+
+    "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": "<span color=\"#7dcfff\">{status}</span> <span font='11' rise='-3pt' color=\"#7dcfff\"></span>",
+	"format-disabled": "<span color=\"#787878\">off</span> <span font='11' color=\"#787878\" rise='-3pt'></span>", // an empty format will hide the module
+	"format-connected": "<span color=\"#7dcfff\">{num_connections}</span> <span font='11' color=\"#7dcfff\" rise='-3pt'></span>",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
+    "clock": {
+	"format": "<span color=\"#DDDFFF\">{:%A  %I:%M %p}</span>",
+        "format-alt": "<span color=\"#DDDFFF\">{:%Y/%m/%d  %I:%M %p}</span>"
+    },
+   
+    "cpu": {
+        "interval": 10,
+        "format": "<span color=\"#93faf0\">{}%</span> <span color=\"#93faf0\">{icon}</span>",
+	"format-icons": [""],
+        "max-length": 10
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "<span color=\"#f6c4ff\">{free}</span> <span rise='-1pt' color=\"#f6c4ff\"> </span>",
+	"format-icons": [""],
+        "path": "/"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "<span color=\"#f6c4ff\">{}%</span> <span color=\"#f6c4ff\">{icon}</span>",
+	"format-icons": [""],
+        "max-length": 10
+    },
+
+    "network": {
+       "interface": "wlp61s0",
+       "format": "",
+       "format-wifi": "<span color=\"#7dcfff\">{signalStrength}%</span> <span color=\"#7dcfff\"></span>",
+       "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+       "format-disconnected": "", //An empty format will hide the module.
+       "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+       "tooltip-format-ethernet": "{ifname} ",
+       "tooltip-format-disconnected": "Disconnected",
+       "max-length": 50
+    },
+
+    "tray": {
+       "icon-size": 21,
+       "spacing": 10
+    },
+
+    "wireplumber": {
+        "format": "<span color=\"#e0f9ff\">{volume}%</span> <span font='12' color=\"#e0f9ff\" rise='-3pt'>{icon}</span>",
+	"format-muted": "<span color=\"#787878\">---</span> <span color=\"#787878\" rise='0pt'></span>",
+	"on-click": "helvum",
+	"format-icons": ["", "", ""]
+    }
+}

@@ -1,0 +1,112 @@
+* {
+    border: none;
+    font-family: Jetbrains Mono;
+    font-size: 12px;
+    color: #ffffff;
+    border-radius: 0px;
+}
+
+window {
+	/*font-weight: bold;*/
+}
+window#waybar {
+    background: rgba(13, 12, 18, 0.90);
+}
+
+/*-----module groups----*/
+.modules-right {
+	background-color: rgba(13,12,18,0.00);
+    margin: 0px 0px 0px 0;
+    padding: 0px 0px;
+}
+.modules-center {
+	background-color: rgba(13,12,18,0.00);
+    margin: 0px 0 0 0;
+}
+.modules-left {
+    margin: 0px 0 0 5px;
+	background-color: rgba(0,119,179,0.0);
+}
+
+
+/*-----modules indv----*/
+#workspaces {
+	padding: 0px 0px 0 0;
+	color: orange;
+	background-color: rgba(12,13,21,0.0);
+}
+
+#workspaces button {
+	padding: 0 1 0 1;
+	color: transparent;
+	border-bottom: 1px solid;
+}
+
+#workspaces button.active {
+    margin: 0px 1px 0px 1px;
+    padding: 0px 0px;
+    color: white;
+    background-color: rgba(20,20,20,0.0);
+}
+
+
+#window {
+	margin: 0px 0px 0 0px;
+	padding: 0px 25px; 
+	background-color: rgba(12,13,18,0.0);
+}
+
+#mode {
+	margin: 0 0 0 0;
+	padding: 0px 10px;
+}
+
+#clock {
+       padding: 0px 16px;
+       background-color: rgba(12,13,18,0.0);
+}
+
+#backlight {
+	margin: 0px 15px 0px 15px;
+}
+
+#bluetooth {
+	margin: 0px 15px 0px 15px;
+}
+
+#battery {
+	margin: 0px 15px 0px 15px;
+}
+
+#cpu {
+	margin: 0px 15px 0px 15px;
+}
+
+#disk {
+	margin: 0px 15px 0px 0px;
+}
+
+#memory {
+	margin: 0px 15px 0px 15px;
+}
+
+#temperature {
+	margin: 0px 15px 0px 15px;
+}
+
+#network {
+	margin: 0px 15px 0px 10px;
+}
+
+#wireplumber {
+	margin: 0px 15px 0px 15px;
+}
+
+#tray {
+	margin: 0px 40px 0px 5px;
+	background-color: rgba(18,22,32,0.8);
+}
+
+#tray menu {
+	background-color: rgba(12,13,41,0.95);
+}
