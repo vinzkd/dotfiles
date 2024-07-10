@@ -8,7 +8,7 @@
     "height": 30,
     "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "disk", "temperature", "custom/separator", "wireplumber", "backlight", "battery", "custom/separator", "bluetooth",  "network"],
+    "modules-right": ["cpu", "memory", "disk", "temperature", "custom/separator", "wireplumber", "battery", "backlight", "custom/separator", "bluetooth",  "network"],
 
     // modules
 
@@ -50,31 +50,31 @@
 
     "backlight": {
         "device": "intel_backlight",
-        "format": "<span font='9'>{icon}</span> {percent}%",
-	      "tooltip-format": "{percent}% {icon}",
-        "format-icons": ["",""]
+        "format": "<span font='11' rise='-3pt'>{icon}</span> {percent}%",
+        "tooltip-format": "{percent}% {icon}",
+        "format-icons": ["", ""]
     },
 
     "battery": {
 	      "states": {
 	    	"warning": 20,
-        "low": 40
-	   },
-        "format": "<span font='9' rise='1pt'>{icon}</span> {capacity}%",
-      	"format-charging": "<span font='12' rise='-4pt'></span> {capacity}%",
-        "format-low": "<span font='9'>{icon}</span> {capacity}%",
+        	"low": 40
+	      },
+        "format": "<span font='11' rise='-3pt'>{icon}</span> {capacity}%",
+      	"format-charging": "{capacity}%",
+        "format-low": "<span font='11' rise='-3pt'>{icon}</span> {capacity}%",
         "format-warning": "<span font='9'>{icon}</span> {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""]
     },
 
     "bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-	"format": "<span font='12' rise='-2pt'></span> <span rise='1pt'>{status}</span>",
-	"format-disabled": "<span font='12' rise='-2pt'></span> <span rise='1pt'>---</span>", // an empty format will hide the module
-	"format-connected": "<span font='12' rise='-2pt'></span> <span rise='1pt'>{num_connections}</span>",
-	"tooltip-format": "{controller_alias}\t{controller_address}",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+	      "format": "<span font='12' rise='-4pt'></span> {status}",
+	      "format-disabled": "<span font='12' rise='-4pt'></span> ---", // an empty format will hide the module
+	      "format-connected": "<span font='12' rise='-4pt'></span> {num_connections}",
+	      "tooltip-format": "{controller_alias}\t{controller_address}",
+	      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
     },
 
     "clock": {
@@ -84,8 +84,7 @@
    
     "cpu": {
         "interval": 10,
-        "format": "<span font='11' rise='-3pt'>{icon}</span> {}%",
-	      "format-icons": [""],
+        "format": "<span font='11' rise='-3pt'></span> {}%",
         "max-length": 10
     },
 
@@ -101,21 +100,19 @@
     "disk": {
         "interval": 30,
         "format": "<span font='11' rise='-3pt'></span> {specific_used:0.0f} GB",
-	"unit": "GB",
+	      "unit": "GB",
         "path": "/"
     },
 
     "memory": {
         "interval": 30,
-        "format": "<span font='9' rise='1pt'>{icon}</span> {}%",
-	"format-icons": [""],
-        "max-length": 10
+        "format": "<span font='11' rise='-3pt'></span> {}%"
     },
 
     "network": {
        "interface": "wlp61s0",
        "format": "",
-       "format-wifi": "<span font='9' rise='1pt'></span> {signalStrength}%",
+       "format-wifi": "<span font='11' rise='-3pt'></span> {signalStrength}%",
        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
        "format-disconnected": "", //An empty format will hide the module.
        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -129,9 +126,8 @@
     // "thermal-zone": 2,
     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
        "critical-threshold": 70,
-       "format-critical": "<span font='9' rise='1pt'></span> <span color=\"#93faf0\">{temperatureC}°C</span>",
-       "format": "<span font='9' rise='1pt'></span> <span color=\"#93faf0\">{temperatureC}°C</span>"
-
+       "format-critical": "<span font='11' rise='-3pt'></span> {temperatureC}°C",
+       "format": "<span font='11' rise='-3pt'></span> {temperatureC}°C"
      },
 
     "tray": {
@@ -140,8 +136,8 @@
     },
 
     "wireplumber": {
-        "format": "<span font='12' color=\"#e0f9ff\" rise='-4pt'>{icon}</span> <span color=\"#e0f9ff\">{volume}%</span>",
-	      "format-muted": "<span font='12' color=\"#787878\" rise='-2pt'></span> <span color=\"#787878\">---</span>",
+        "format": "<span font='12' rise='-4pt'>{icon}</span> {volume}%",
+	      "format-muted": "<span font='12' rise='-4pt'></span> ---",
       	"on-click": "helvum",
 	      "format-icons": ["", "", ""]
     }

@@ -66,7 +66,7 @@ window#waybar {
 }
 
 #backlight {
-	margin: 4px 3px;
+	margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
         color: #e0f9ff;
@@ -74,31 +74,31 @@ window#waybar {
 }
 
 #battery {
-	margin: 4px 3px;
+	margin: 0px 3px;
         padding: 0px 12px;
         border-radius: 10px;
-        color: #93faf0;
+        color: #aee6aa;
         background-color: rgba(30,30,50,0.0);
 }
 
 #battery.charging {
-	margin: 4px 3px;
+	margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
-        color: #e4f2aa;
+        color: #e7ff87;
         background-color: rgba(30,30,50,0.0);
 }
 
 #battery.low{
-	margin: 4px 3px;
+	margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
-        color: #d4ff94;
+        color: #d3e6aa;
         background-color: rgba(30,30,50,0.0);
 }
 
 #battery.warning {
-	margin: 4px 3px;
+	margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
         color: #ff0000;
@@ -107,16 +107,16 @@ window#waybar {
 
 #bluetooth,
 #bluetooth.connected {
-	margin: 4px 3px;
+	margin: 0px 2px;
         padding: 0px 10px;
         border-radius: 12px;
-        color: #b0e2ff;
+        color: #b0b4ff;
         background-color: rgba(30,30,50,0.0);
 }
 
 #bluetooth.off, 
 #bluetooth.disabled {
-	margin: 4px 3px;
+	margin: 0px 2px;
         padding: 0px 10px;
         border-radius: 12px;
         color: #787878;
@@ -124,9 +124,10 @@ window#waybar {
 }
 
 #clock {
-       margin: 4px 3px; 
+       margin: 1px 3px; 
        padding: 0px 16px;
-       border-radius: 6px;
+       border: 1px solid rgba(70,70,70,1.0);
+       border-radius: 4px;
        color: #c5daed;
        background-color: rgba(30,30,50,0.0);
 }
@@ -141,15 +142,15 @@ window#waybar {
 }
 
 #network{
-	margin: 4px 3px;
+	margin: 0px 2px;
         padding: 0px 10px;
         border-radius: 12px;
-        color: #b0e2ff;
+        color: #b0b4ff;
         background-color: rgba(30,30,50,0.0);
 }
 
 #temperature {
-        margin: 4px 3px;
+        margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
         color: #bffffc;
@@ -157,27 +158,41 @@ window#waybar {
 }
 
 #temperature.critical {
-        margin: 4px 3px;
+        margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
         color: #ff6f00;
         background-color: rgba(30,30,50,0.0);
 }
 
+#wireplumber {
+      	margin: 0px 3px;
+        padding: 0px 10px;
+        border-radius: 12px;
+        color: #e0f9ff;
+        background-color: rgba(30,30,50,0.0);
+}
+
+#wireplumber.muted {
+      	margin: 0px 3px;
+        padding: 0px 10px;
+        border-radius: 12px;
+        color: #787878;
+        background-color: rgba(30,30,50,0.0);
+}
+
 #cpu,
 #memory,
 #disk {
-	margin: 4px 3px;
+	margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
         color: #bffffc;
         background-color: rgba(30,30,50,0.0);
 }
 
-#backlight,
-#network,
-#wireplumber {
-      	margin: 4px 3px;
+#backlight {
+      	margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
         background-color: rgba(30,30,50,0.0);
