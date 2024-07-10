@@ -6,9 +6,9 @@
     "margin-right": 0,
     "margin-bottom": 0,
     "height": 30,
-    "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "cpu", "memory", "disk"],
+    "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["temperature", "battery", "backlight", "wireplumber", "bluetooth",  "network" ],
+    "modules-right": ["cpu", "memory", "disk", "temperature", "custom/separator", "wireplumber", "backlight", "battery", "custom/separator", "bluetooth",  "network"],
 
     // modules
 
@@ -58,7 +58,7 @@
     "battery": {
 	      "states": {
 	    	"warning": 20,
-        "low": 60
+        "low": 40
 	   },
         "format": "<span font='9' rise='1pt'>{icon}</span> {capacity}%",
       	"format-charging": "<span font='12' rise='-4pt'></span> {capacity}%",
@@ -69,9 +69,9 @@
 
     "bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-	"format": "<span font='11' rise='-3pt'></span> <span>{status}</span>",
-	"format-disabled": "<span font='11' rise='-3pt'></span> off", // an empty format will hide the module
-	"format-connected": "<span font='11' rise='-3pt'></span> {num_connections}",
+	"format": "<span font='12' rise='-2pt'></span> <span rise='1pt'>{status}</span>",
+	"format-disabled": "<span font='12' rise='-2pt'></span> <span rise='1pt'>---</span>", // an empty format will hide the module
+	"format-connected": "<span font='12' rise='-2pt'></span> <span rise='1pt'>{num_connections}</span>",
 	"tooltip-format": "{controller_alias}\t{controller_address}",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
@@ -100,7 +100,7 @@
 
     "disk": {
         "interval": 30,
-        "format": "<span font='11' rise='-3pt'></span> {specific_free:0.0f} GB",
+        "format": "<span font='11' rise='-3pt'></span> {specific_used:0.0f} GB",
 	"unit": "GB",
         "path": "/"
     },
@@ -115,7 +115,7 @@
     "network": {
        "interface": "wlp61s0",
        "format": "",
-       "format-wifi": "<span font='9' rise='1pt' color=\"#7dcfff\"></span> <span color=\"#7dcfff\">{signalStrength}%</span>",
+       "format-wifi": "<span font='9' rise='1pt'></span> {signalStrength}%",
        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
        "format-disconnected": "", //An empty format will hide the module.
        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -128,9 +128,9 @@
     "temperature": {
     // "thermal-zone": 2,
     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 70,
-    "format-critical": "<span font='9' rise='1pt'color=\"#93faf0\"></span> <span color=\"#93faf0\">{temperatureC}°C</span>",
-    "format": "<span font='9' rise='1pt' color=\"#93faf0\"></span> <span color=\"#93faf0\">{temperatureC}°C</span>"
+       "critical-threshold": 70,
+       "format-critical": "<span font='9' rise='1pt'></span> <span color=\"#93faf0\">{temperatureC}°C</span>",
+       "format": "<span font='9' rise='1pt'></span> <span color=\"#93faf0\">{temperatureC}°C</span>"
 
      },
 
