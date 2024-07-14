@@ -77,7 +77,7 @@ window#waybar {
 	margin: 0px 3px;
         padding: 0px 12px;
         border-radius: 10px;
-        color: #aee6aa;
+        color: #e0f9ff;
         background-color: rgba(30,30,50,0.0);
 }
 
@@ -86,14 +86,6 @@ window#waybar {
         padding: 0px 10px;
         border-radius: 12px;
         color: #e7ff87;
-        background-color: rgba(30,30,50,0.0);
-}
-
-#battery.low{
-	margin: 0px 3px;
-        padding: 0px 10px;
-        border-radius: 12px;
-        color: #d3e6aa;
         background-color: rgba(30,30,50,0.0);
 }
 
@@ -110,7 +102,7 @@ window#waybar {
 	margin: 0px 2px;
         padding: 0px 10px;
         border-radius: 12px;
-        color: #b0b4ff;
+        color: #bbddfc;
         background-color: rgba(30,30,50,0.0);
 }
 
@@ -124,7 +116,7 @@ window#waybar {
 }
 
 #clock {
-       margin: 1px 3px; 
+       margin: 0px 3px; 
        padding: 0px 16px;
        border: 1px solid rgba(70,70,70,1.0);
        border-radius: 4px;
@@ -141,11 +133,19 @@ window#waybar {
 	margin: 0px 4px;
 }
 
-#network{
+#network {
 	margin: 0px 2px;
         padding: 0px 10px;
         border-radius: 12px;
-        color: #b0b4ff;
+        color: #bbddfc;
+        background-color: rgba(30,30,50,0.0);
+}
+
+#network.ethernet {
+	margin: 0px 2px;
+        padding: 0px 10px;
+        border-radius: 12px;
+        color: #aebfcf;
         background-color: rgba(30,30,50,0.0);
 }
 
@@ -153,7 +153,7 @@ window#waybar {
         margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
-        color: #bffffc;
+        color: #beedea;
         background-color: rgba(30,30,50,0.0);
 }
 
@@ -187,7 +187,7 @@ window#waybar {
 	margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
-        color: #bffffc;
+        color: #beedea;
         background-color: rgba(30,30,50,0.0);
 }
 
