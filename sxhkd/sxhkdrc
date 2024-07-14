@@ -3,8 +3,8 @@
 #
 
 # terminal emulator
-super + Return
-	kitty
+super + space
+	st
 
 # program launcher
 super + d
@@ -126,15 +126,18 @@ super + {Left,Down,Up,Right}
 #
 
 # brightness
-XF86MonBrightness{Up,Down}
-	brightnessctl s 10{+,-}
+XF86MonBrightnessUp
+	brightnessctl s +5%
 
-# volume control
+XF86MonBrightnessDown
+	brightnessctl s 5%-
+
+# wireplumber
 XF86Audio{Raise,Lower}Volume
-	pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{+,-}
 
 XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
 # play/pause, prev/next
 XF86Audio{Play,Next,Prev}
