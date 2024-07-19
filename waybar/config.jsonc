@@ -7,7 +7,7 @@
     "margin-bottom": 0,
     "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "disk", "temperature", "custom/separator", "battery", "wireplumber", "backlight", "custom/separator", "bluetooth",  "network"],
+    "modules-right": ["cpu", "memory", "disk", "temperature", "custom/separator", "battery", "wireplumber", "backlight", "custom/separator", "bluetooth",  "network", "custom/notification"],
 
     // modules
 
@@ -20,8 +20,9 @@
   	// "format": "<span color=\"#c9d0ff\">{name}</span>",
   	"format": "{icon}",
     "format-icons": {
-      "11": "  ",
-      "12": "  "
+      "9": "  ",
+      "10": "  ",
+      "11": "  "
     },
   	"on-click": "activate",
   	"sort-by-number": true
@@ -117,6 +118,27 @@
        "tooltip-format-disconnected": "Disconnected",
        "max-length": 50
     },
+
+    "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='white'></span><span foreground='red'><sup></sup></span>",
+      "none": "<span foreground='white'></span>",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
 
     "temperature": {
     // "thermal-zone": 2,
