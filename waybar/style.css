@@ -149,6 +149,11 @@ window#waybar {
         background-color: rgba(30,30,50,0.0);
 }
 
+#custom-notification {
+  margin: 0px 0px;
+  padding: 0px 20px;
+}
+
 #temperature {
         margin: 0px 3px;
         padding: 0px 10px;
