@@ -1,0 +1,43 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '''
+$directory$cmd_duration$git_branch$package
+$character'''
+
+right_format = '''$time'''
+
+add_newline = true
+
+
+## Colors
+palette = 'foo'
+
+[palettes.foo]
+grey = '#969da8'
+
+## Modules
+
+[character] 
+success_symbol = '[](bold green) ' 
+error_symbol = '[✗](bold red)'
+
+vimcmd_symbol = '[](bold grey) '
+vimcmd_visual_symbol = '[Visual](bold yellow) '
+
+[cmd_duration]
+min_time = 500
+format = 'took [$duration](bold yellow)'
+
+[directory]
+read_only = ' 󰌾'
+
+[fill]
+disabled = false
+
+[package]
+disabled = false
+
+[time]
+disabled = false
+format = '[$time](bold grey) '
