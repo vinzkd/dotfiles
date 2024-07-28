@@ -7,7 +7,7 @@
     "margin-bottom": 0,
     "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "disk", "temperature", "custom/separator", "battery", "wireplumber", "backlight", "custom/separator", "bluetooth",  "network", "custom/notification"],
+    "modules-right": ["cpu", "memory", "disk", "temperature", "custom/separator", "battery", "wireplumber", "custom/separator", "bluetooth",  "network", "custom/separator", "custom/notification"],
 
     // modules
 
@@ -17,7 +17,6 @@
     },
 
     "hyprland/workspaces": {
-  	// "format": "<span color=\"#c9d0ff\">{name}</span>",
   	"format": "{icon}",
     "format-icons": {
       "9": "  ",

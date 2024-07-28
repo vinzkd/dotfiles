@@ -11,13 +11,13 @@ window {
 window#waybar {
     margin: 5px 0px; 
     padding: 5px 0px;
-    background: rgba(13, 12, 18, 0.9);
+    background: rgba(12, 11, 16, 0.9);
 }
 
 /*-----module groups----*/
 .modules-right {
 	background-color: rgba(13,12,18,0.00);
-    margin: 0px 0px 0px 0;
+    margin: 0px 0px 0px 0px;
     padding: 0px 0px;
 }
 .modules-center {
@@ -117,8 +117,8 @@ window#waybar {
 
 #clock {
        margin: 0px 3px; 
-       padding: 0px 16px;
-       border: 1px solid rgba(70,70,70,1.0);
+       padding: 4px 16px;
+       border: 1px solid rgba(60,60,60,0.9);
        border-radius: 4px;
        color: #c5daed;
        background-color: rgba(30,30,50,0.0);
@@ -151,7 +151,7 @@ window#waybar {
 
 #custom-notification {
   margin: 0px 0px;
-  padding: 0px 20px;
+  padding: 0px 10px;
 }
 
 #temperature {
