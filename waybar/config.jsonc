@@ -7,43 +7,44 @@
     "margin-bottom": 0,
     "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "disk", "temperature", "custom/separator", "battery", "wireplumber", "custom/separator", "bluetooth",  "network", "custom/separator", "custom/notification"],
+    "modules-right": ["cpu", "memory", "disk", "temperature", "battery", "wireplumber", "bluetooth",  "network", "custom/notification"],
 
     // modules
 
     "hyprland/window": {
-	"format": "<span color=\"#DDDFFF\">{title}</span>",
+      	"format": "<span color=\"#DDDFFF\">{title}</span>",
         "max-length": 80
     },
 
     "hyprland/workspaces": {
-  	"format": "{icon}",
-    "format-icons": {
-      "9": "  ",
-      "10": "  ",
-      "11": "  "
-    },
-  	"on-click": "activate",
-  	"sort-by-number": true
+  	    "format": "{icon}",
+        "format-icons": {
+            "9": "  ",
+            "10": "  ",
+            "11": " 󰇮 ",
+            "12": " 󰄜 "
+        },
+  	    "on-click": "activate",
+  	    "sort-by-number": true
     },
 
     "sway/window": {
-	"format": "<span color=\"#DDDFFF\">{title}</span>",
+	      "format": "<span color=\"#DDDFFF\">{title}</span>",
         "max-length": 80
     },
 
     "sway/mode": {
-	    "format": "{}",
-	    "max-length": 50
+	      "format": "{}",
+	      "max-length": 50
     },
 
     "sway/workspaces": {
-  	"format": "{icon}",
-  	"on-click": "activate",
-  	"sort-by-number": true,
-	"format-icons": {
-		"10": "   ",
-		"11": "   "
+  	    "format": "{icon}",
+  	    "on-click": "activate",
+  	    "sort-by-number": true,
+	      "format-icons": {
+		        "10": "   ",
+		        "11": "   "
 	}
     },
 
@@ -58,17 +59,17 @@
 	      "states": {
 	    	"warning": 20
 	      },
-        "format": "<span font='11' rise='-3pt'>{icon}</span> {capacity}%",
-      	"format-charging": "<span font='11' rise='-3pt'></span> {capacity}%",
-        "format-warning": "<span font='11' rise='-3pt'>{icon}</span> {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+        "format": "<span font='11'>{icon}</span> {capacity}%",
+      	"format-charging": "<span font='12'>󱐌</span> {capacity}%",
+        "format-warning": "<span font='11'>{icon}</span> {capacity}%",
+        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰂂"]
     },
 
     "bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-	      "format": "<span font='12' rise='-4pt'></span> {status}",
-	      "format-disabled": "<span font='12' rise='-4pt'></span> ---", // an empty format will hide the module
-	      "format-connected": "<span font='12' rise='-4pt'></span> {num_connections}",
+	      "format": "<span font='12'>󰂯</span> {status}",
+	      "format-disabled": "<span font='12'>󰂲</span> ---", // an empty format will hide the module
+	      "format-connected": "<span font='12'>󰂱</span> {num_connections}",
 	      "tooltip-format": "{controller_alias}\t{controller_address}",
 	      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
@@ -81,81 +82,81 @@
    
     "cpu": {
         "interval": 10,
-        "format": "<span font='11' rise='-3pt'></span> {}%",
+        "format": " {}%",
         "max-length": 10
     },
 
     "custom/icon": {
-	    "format": ""
+  	    "format": ""
     },
 
    "custom/separator": {
-	    "format": "|"
+  	    "format": "|"
     },
 
 
     "disk": {
         "interval": 30,
-        "format": "<span font='11' rise='-3pt'></span> {specific_used:0.0f} GB",
+        "format": "<span font='11'>󰉖</span> {specific_used:0.0f} GB",
 	      "unit": "GB",
         "path": "/"
     },
 
     "memory": {
         "interval": 30,
-        "format": "<span font='11' rise='-3pt'></span> {}%"
+        "format": "<span font='11'>󰠘</span> {}%"
     },
 
     "network": {
-       "format": "",
-       "format-wifi": "<span font='11' rise='-3pt'></span> {signalStrength}%",
-       "format-ethernet": "{ipaddr}/{cidr} <span font='11' rise='-3pt'></span>",
-       "format-disconnected": "", //An empty format will hide the module.
-       "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-       "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-       "tooltip-format-ethernet": "{ifname} ",
-       "tooltip-format-disconnected": "Disconnected",
-       "max-length": 50
+        "format": "",
+        "format-wifi": "<span font='11'>󰖩</span> {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr} <span font='11' rise='0pt'>󰈀</span>",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
     },
 
     "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='white'></span><span foreground='red'><sup></sup></span>",
-      "none": "<span foreground='white'></span>",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='white'></span><span foreground='red'><sup></sup></span>",
+            "none": "<span foreground='white'></span>",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  },
 
     "temperature": {
     // "thermal-zone": 2,
     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-       "critical-threshold": 70,
-       "format-critical": "<span font='11' rise='-3pt'></span> {temperatureC}°C",
-       "format": "<span font='11' rise='-3pt'></span> {temperatureC}°C"
-     },
+        "critical-threshold": 70,
+        "format": "<span font='11'>󱃃</span> {temperatureC}°C",
+        "format-critical": "<span font='11'>󱃂</span> {temperatureC}°C"
+    },
 
     "tray": {
-       "icon-size": 18,
-       "spacing": 10
+        "icon-size": 18,
+        "spacing": 10
     },
 
     "wireplumber": {
-        "format": "<span font='12' rise='-4pt'>{icon}</span> {volume}%",
-	      "format-muted": "<span font='12' rise='-4pt'></span> ---",
+        "format": "<span font='14'>{icon}</span> <span rise='1pt'>{volume}%</span>",
+	      "format-muted": "<span font='12' rise='0pt'>󰖁</span> ---",
       	"on-click": "helvum",
-	      "format-icons": ["", "", ""]
+	      "format-icons": ["󰕿", "󰖀", "󰕾"]
     }
 }
