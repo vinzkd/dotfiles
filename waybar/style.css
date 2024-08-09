@@ -1,8 +1,8 @@
 * {
     border: none;
+    border-radius: 0px;
     font-family: UbuntuMono;
     font-size: 14px;
-    border-radius: 0px;
 }
 
 window {
@@ -48,6 +48,7 @@ window#waybar {
 #workspaces button.active {
     margin: 0px 4px;
     padding: 0px 1px;
+    border: 1px solid rgba(60,60,90,1.0);
     border-radius: 2px;
     border-bottom: 2px;
     color: #edf9fa;
@@ -73,55 +74,36 @@ window#waybar {
         background-color: rgba(30,30,50,0.8);
 }
 
+
 #battery {
-	margin: 0px 3px;
-        padding: 0px 12px;
-        border-radius: 10px;
         color: #e0f9ff;
-        background-color: rgba(30,30,50,0.0);
 }
 
 #battery.charging {
-	margin: 0px 3px;
-        padding: 0px 10px;
-        border-radius: 12px;
         color: #e7ff87;
-        background-color: rgba(30,30,50,0.0);
 }
 
 #battery.warning {
-	margin: 0px 3px;
-        padding: 0px 10px;
-        border-radius: 12px;
         color: #ff0000;
-        background-color: rgba(30,30,50,0.0);
 }
 
 #bluetooth,
 #bluetooth.connected {
-	margin: 0px 2px;
-        padding: 0px 10px;
-        border-radius: 12px;
         color: #bbddfc;
-        background-color: rgba(30,30,50,0.0);
 }
 
 #bluetooth.off, 
 #bluetooth.disabled {
-	margin: 0px 2px;
-        padding: 0px 10px;
-        border-radius: 12px;
         color: #787878;
-        background-color: rgba(30,30,50,0.0);
 }
 
 #clock {
-       margin: 0px 3px; 
-       padding: 4px 16px;
-       border: 1px solid rgba(60,60,60,0.9);
-       border-radius: 4px;
+       margin: 2px 2px; 
+       padding: 0px 16px;
+       border: 1px solid rgba(20,20,40,0.0);
+       border-radius: 0px;
        color: #c5daed;
-       background-color: rgba(30,30,50,0.0);
+       background-color: rgba(20,20,40,1.0);
 }
 
 #custom-icon {
@@ -134,11 +116,7 @@ window#waybar {
 }
 
 #network {
-	margin: 0px 2px;
-        padding: 0px 10px;
-        border-radius: 12px;
         color: #bbddfc;
-        background-color: rgba(30,30,50,0.0);
 }
 
 #network.ethernet {
@@ -155,11 +133,7 @@ window#waybar {
 }
 
 #temperature {
-        margin: 0px 3px;
-        padding: 0px 10px;
-        border-radius: 12px;
         color: #beedea;
-        background-color: rgba(30,30,50,0.0);
 }
 
 #temperature.critical {
@@ -171,29 +145,40 @@ window#waybar {
 }
 
 #wireplumber {
-      	margin: 0px 3px;
-        padding: 0px 10px;
-        border-radius: 12px;
         color: #e0f9ff;
-        background-color: rgba(30,30,50,0.0);
 }
 
 #wireplumber.muted {
-      	margin: 0px 3px;
-        padding: 0px 10px;
-        border-radius: 12px;
         color: #787878;
-        background-color: rgba(30,30,50,0.0);
+}
+
+#backlight,
+#battery,
+#battery.charging,
+#battery.warning,
+#bluetooth,
+#bluetooth.connected,
+#bluetooth.off,
+#bluetooth.disabled,
+#custom-notification,
+#network,
+#temperature,
+#wireplumber,
+#wireplumber.muted {
+	      margin: 0px 5px;
+        padding: 0px 12px;
+        border-radius: 0px;
+        background-color: rgba(20,20,30,0.0);
 }
 
 #cpu,
 #memory,
 #disk {
-	margin: 0px 3px;
-        padding: 0px 10px;
-        border-radius: 12px;
+	      margin: 0px 3px;
+        padding: 0px 12px;
+        border-radius: 0px;
         color: #beedea;
-        background-color: rgba(30,30,50,0.0);
+        background-color: rgba(20,20,30,0.0);
 }
 
 #backlight {
