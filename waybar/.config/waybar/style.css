@@ -33,7 +33,7 @@ window#waybar {
 /*-----modules indv----*/
 #workspaces {
 	margin: 4px 0px;
-	padding: 0px 4px;
+	padding: 0px 10px 0px 4px;
 	border-radius: 2px;
 	background-color: rgba(28,26,38,0.0);
 }
@@ -64,6 +64,11 @@ window#waybar {
 #mode {
 	margin: 0 0 0 0;
 	padding: 0px 10px;
+}
+
+#mpris {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 18px;
 }
 
 #backlight {
@@ -113,6 +118,7 @@ window#waybar {
 
 #custom-separator {
 	margin: 0px 4px;
+  color: #888888;
 }
 
 #network {

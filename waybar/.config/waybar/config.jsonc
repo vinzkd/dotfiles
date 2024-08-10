@@ -5,7 +5,7 @@
     "margin-left": 0,
     "margin-right": 0,
     "margin-bottom": 0,
-    "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "mpris"],
     "modules-center": ["clock"],
     "modules-right": ["cpu", "memory", "disk", "temperature", "battery", "wireplumber", "bluetooth",  "network", "custom/notification"],
 
@@ -105,6 +105,20 @@
     "memory": {
         "interval": 30,
         "format": "<span font='11'>󰠘</span> {}%"
+    },
+
+    "mpris": {
+	      "format": "{player_icon} <i>{dynamic}</i>",
+      	"format-paused": "{status_icon} <i>{dynamic}</i>",
+        "dynamic-len": 80,
+      	"player-icons": {
+          	"default": " ",
+        		"mpv": "🎵",
+            "firefox": "  "
+      	},
+      	"status-icons": {
+        		"paused": "  "
+      	},
     },
 
     "network": {
