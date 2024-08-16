@@ -9,9 +9,9 @@ window {
 	/*font-weight: bold;*/
 }
 window#waybar {
-    margin: 5px 0px; 
-    padding: 5px 0px;
-    background: rgba(12, 11, 16, 0.9);
+    margin: 0px 0px; 
+    padding: 0px 0px;
+    background: rgba(12, 11, 16, 0.95);
 }
 
 /*-----module groups----*/
@@ -33,21 +33,21 @@ window#waybar {
 /*-----modules indv----*/
 #workspaces {
 	margin: 4px 0px;
-	padding: 0px 10px 0px 4px;
-	border-radius: 2px;
+	padding: 0px 4px 0px 4px;
+	border-radius: 0px;
 	background-color: rgba(28,26,38,0.0);
 }
 
 #workspaces button {
 	margin: 0px 4px;
-	padding: 0px 1px;
+	padding: 0px 0px;
 	color: #5e5e5e;
 	background-color: rgba(20,20,20,0.0);
 }
 
 #workspaces button.active {
     margin: 0px 4px;
-    padding: 0px 1px;
+    padding: 0px 0px;
     border: 1px solid rgba(60,60,90,1.0);
     border-radius: 2px;
     border-bottom: 2px;
@@ -56,8 +56,8 @@ window#waybar {
 }
 
 #window {
-	margin: 0px 0px 0 0px;
-	padding: 0px 10px; 
+	margin: 0px 0px 0px 0px;
+	padding: 0px 10px 0px 12px; 
 	background-color: rgba(12,13,18,0.0);
 }
 
@@ -108,7 +108,7 @@ window#waybar {
        border: 1px solid rgba(20,20,40,0.0);
        border-radius: 0px;
        color: #c5daed;
-       background-color: rgba(20,20,40,1.0);
+       background-color: rgba(20,20,40,0.0);
 }
 
 #custom-icon {
@@ -117,7 +117,7 @@ window#waybar {
 }
 
 #custom-separator {
-	margin: 0px 4px;
+	margin: 0px 5px;
   color: #888888;
 }
 

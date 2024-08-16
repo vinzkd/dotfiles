@@ -5,15 +5,15 @@
     "margin-left": 0,
     "margin-right": 0,
     "margin-bottom": 0,
-    "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "mpris"],
+    "modules-left": ["hyprland/workspaces", "sway/workspaces", "custom/separator", "sway/mode", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "disk", "temperature", "battery", "wireplumber", "bluetooth",  "network", "custom/notification"],
+    "modules-right": ["cpu", "memory", "disk", "temperature", "battery", "wireplumber", "bluetooth",  "network", "custom/notification", "tray"],
 
     // modules
 
     "hyprland/window": {
       	"format": "<span color=\"#DDDFFF\">{title}</span>",
-        "max-length": 80
+        "max-length": 90
     },
 
     "hyprland/workspaces": {
