@@ -212,7 +212,8 @@
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION=' V'
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_VIVIS_FOREGROUND=5
   # Prompt symbol in overwrite vi mode.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIOWR_CONTENT_EXPANSION=' hi▶'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIOWR_CONTENT_EXPANSION=' ▶'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_VIOWR_FOREGROUND=209
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=true
   # No line terminator if prompt_char is the last segment.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=
@@ -223,7 +224,7 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#423B7A'
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#1D1D2B'
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
   # If directory is too long, shorten some of its segments to the shortest possible unique
@@ -507,7 +508,7 @@
   typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=223
   typeset -g POWERLEVEL9K_VCS_{CLEAN,STAGED,UNSTAGED,COMMITS_AHEAD,COMMITS_BEHIND,UNTRACKED,CONFLICTED,MODIFIED}_BACKGROUND='#111111'
   # Custom icon.
-  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION=''
+  typeset -g POWERLEVEL9K_VCS_VISUAL_IDENTIFIER_EXPANSION='󰊢'
   # Custom prefix.
   # typeset -g POWERLEVEL9K_VCS_PREFIX='on '
 

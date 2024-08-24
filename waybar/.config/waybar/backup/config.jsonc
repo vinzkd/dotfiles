@@ -6,30 +6,41 @@
   "margin-right": 0,
   "margin-bottom": 0,
   "modules-left": [
+    "custom/arrow1",
     "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
-  ],
-  "modules-right": [
     "cpu",
     "memory",
     "temperature",
-    "network",
-    "bluetooth",
-    "wireplumber",
-    "backlight",
-    "battery",
-    "clock#date",
+    "custom/icon",
+    "custom/arrow8",
+    "custom/arrow7",
     "clock#time",
+    "custom/arrow6",
+    "clock#date",
+    "custom/arrow5",
+    "network",
+    "custom/arrow4"
+  ],
+  "modules-right": [
+    "mpris",
+    "custom/arrow3",
+    "wireplumber",
+    "custom/arrow2",
+    "bluetooth",
+    "custom/arrow1",
+    "battery",
+    "custom/arrow0",
     "custom/notification"
   ],
   // modules
   "hyprland/window": {
     "format": "{}",
-    "max-length": 80,
+    "max-length": 50,
     "rewrite": {
-      "(.*) — Mozilla Firefox": "<span color='#FF7D23'>󰈹</span>  $1",
+      "(.*) — Mozilla Firefox": "<span color='#F4BA3A'></span>  $1",
       "(.*) - zsh": "> [$1]"
     },
     "separate-outputs": true
@@ -49,7 +60,10 @@
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "tooltip-format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      ""
+    ]
   },
   "battery": {
     "states": {
@@ -74,10 +88,6 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
-  },
-  "clock": {
-    "format": "󰥔 {:%m/%e %H:%M}",
-    "format-alt": "{:%A, %B %d, %Y (%R)}"
   },
   "clock#time": {
     "format": "󰥔 {:%H:%M}",
@@ -130,7 +140,7 @@
     "format": "󰆓 {}%"
   },
   "mpris": {
-    "format": "{player_icon} <b>{dynamic}</b>",
+    "format": "{player_icon} <i>{dynamic}</i>",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
     "dynamic-len": 50,
     "player-icons": {
@@ -146,7 +156,7 @@
     "format": "",
     "format-wifi": "󰖩 {signalStrength}%",
     "format-ethernet": "󰈀 {bandwidthTotalBytes}",
-    "format-disconnected": "󰞃 ---", //An empty format will hide the module.
+    "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
@@ -191,7 +201,47 @@
     "format-icons": [
       "󰕿",
       "󰖀",
-      "󰕾"
+      "󰕾"
     ]
+  },
+  "custom/arrow0": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow00": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow1": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow2": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow3": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow4": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow5": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow6": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow7": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow8": {
+    "format": "",
+    "tooltip": false
   }
 }

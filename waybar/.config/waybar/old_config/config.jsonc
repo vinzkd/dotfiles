@@ -10,26 +10,24 @@
     "hyprland/window"
   ],
   "modules-center": [
+    "clock"
   ],
   "modules-right": [
     "cpu",
     "memory",
+    "disk",
     "temperature",
-    "network",
-    "bluetooth",
-    "wireplumber",
-    "backlight",
     "battery",
-    "clock#date",
-    "clock#time",
+    "wireplumber",
+    "bluetooth",
+    "network",
     "custom/notification"
   ],
   // modules
   "hyprland/window": {
     "format": "{}",
-    "max-length": 80,
     "rewrite": {
-      "(.*) — Mozilla Firefox": "<span color='#FF7D23'>󰈹</span>  $1",
+      "(.*) — Mozilla Firefox": "<span color='#F4BA3A'></span>  $1",
       "(.*) - zsh": "> [$1]"
     },
     "separate-outputs": true
@@ -49,7 +47,10 @@
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "tooltip-format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      ""
+    ]
   },
   "battery": {
     "states": {
@@ -76,37 +77,8 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   },
   "clock": {
-    "format": "󰥔 {:%m/%e %H:%M}",
-    "format-alt": "{:%A, %B %d, %Y (%R)}"
-  },
-  "clock#time": {
-    "format": "󰥔 {:%H:%M}",
-    "format-alt": "{:%A, %B %d, %Y (%R)}"
-  },
-  "clock#date": {
-    "format": "󰃭 {:%m/%e}",
-    "format-alt": "{:%A, %B %d, %Y (%R)}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "year",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "on-scroll": 1,
-      "format": {
-        "months": "<span color='#ffead3'><b>{}</b></span>",
-        "days": "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
-    },
-    "actions": {
-      "on-click-right": "mode",
-      "on-click-forward": "tz_up",
-      "on-click-backward": "tz_down",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+    "format": "{:%A  %I:%M %p}",
+    "format-alt": "{:%B %d  %I:%M %p}"
   },
   "cpu": {
     "interval": 10,
@@ -130,9 +102,9 @@
     "format": "󰆓 {}%"
   },
   "mpris": {
-    "format": "{player_icon} <b>{dynamic}</b>",
+    "format": "{player_icon} <i>{dynamic}</i>",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "dynamic-len": 50,
+    "dynamic-len": 80,
     "player-icons": {
       "default": " ",
       "mpv": "🎵",
@@ -145,8 +117,8 @@
   "network": {
     "format": "",
     "format-wifi": "󰖩 {signalStrength}%",
-    "format-ethernet": "󰈀 {bandwidthTotalBytes}",
-    "format-disconnected": "󰞃 ---", //An empty format will hide the module.
+    "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+    "format-disconnected": "", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
@@ -157,8 +129,8 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
+      "notification": "<span foreground='white'></span><span foreground='red'><sup></sup></span>",
+      "none": "<span foreground='white'></span>",
       "dnd-notification": "<span foreground='red'><sup></sup></span>",
       "dnd-none": "",
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
@@ -191,7 +163,15 @@
     "format-icons": [
       "󰕿",
       "󰖀",
-      "󰕾"
+      "󰕾"
     ]
+  },
+  "custom/arrow1": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/arrow2": {
+    "format": "",
+    "tooltip": false
   }
 }
