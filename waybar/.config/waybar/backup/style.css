@@ -1,23 +1,14 @@
 /* Styles */
 
 /* Colors */
-@define-color bg                      #0d0c12;
-
-@define-color battery_warning         #fc3e0a;
-@define-color bg_battery              #1d1d2b;
-
-@define-color bg_bluetooth            #1e1e2d;
-@define-color bg_cpu                  #181825;
-@define-color bg_date                 #0d0c12;
-@define-color bg_icon                 #313244;
-@define-color bg_memory               #1e1e2d;
-@define-color bg_network              #181825;
-@define-color bg_notifications        #d3d9f0;
-@define-color bg_temperature          #0d0c12;
-@define-color bg_time                 #1d1d2b;
-@define-color bg_wireplumber          #181825;
-@define-color bg_workspaces           #1d1d2b;
-@define-color bg_workspaces_button    #D3D9F0;
+@define-color bg              #0d0c12;
+@define-color bg_battery      #313244;
+@define-color bg_bluetooth    #1e1e2d;
+@define-color bg_date         #1e1e2d;
+@define-color bg_icon         #B4BEFE;
+@define-color bg_network      #181825;
+@define-color bg_time         #313244;
+@define-color bg_wireplumber  #181825;
 
 
 /* */
@@ -37,7 +28,7 @@ window {
 
 /*-----module groups----*/
 .modules-right {
-	background-color: rgba(13,12,18,0.0);
+	background-color: rgba(13,12,18,1.0);
     margin: 0px 0px 0px 0px;
     padding: 0px 0px;
 }
@@ -60,28 +51,29 @@ window {
 #network,
 #temperature,
 #wireplumber {
-    padding: 0px 16px;
+    padding: 0px 10px;
 }
 
 /*-----modules indv----*/
 #workspaces {
 	margin: 0px 0px;
-	padding: 0px 4px 0px 0px;
-	background-color: @bg_workspaces;
+	padding: 0px 0px;
+	background-color: @bg_wireplumber;
 }
 
 #workspaces button {
-	margin: 0px 5px;
+	margin: 0px 4px;
 	padding: 0px 0px;
 	color: #e5e5e5;
+	background-color: rgba(20,20,20,0.0);
 }
 
 #workspaces button.active {
     margin: 0px 4px;
-    padding: 0px 0px;
-    border-radius: 0px;
+    padding: 0px 4px;
+    border-radius: 40px;
     color: #090815;
-    background-color: @bg_workspaces_button;
+    background-color: #8BD5CA;
 }
 
 #window {
@@ -90,23 +82,18 @@ window {
 	padding: 0px 20px; 
 }
 
-#cpu {
-    color: #999999;
-    background-color: @bg_cpu;
-}
-
 #custom-icon{
-    color: #F5BDE6;
+    color: #000000;
     background-color: @bg_icon;
 }
 
 #mpris {
-  margin: 0px 20px 0px 0px;
-  padding: 0px 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 30px;
 }
 
 #backlight {
-	      margin: 0px 0px;
+	margin: 0px 3px;
         padding: 0px 10px;
         border-radius: 12px;
         color: #e0f9ff;
@@ -124,7 +111,7 @@ window {
 }
 
 #battery.warning {
-        color: @battery_warning;
+        color: #ff0000;
 }
 
 #bluetooth,
@@ -169,32 +156,26 @@ window {
         background-color: @bg_network;
 }
 
-#network.disconnected {
-        color: #787878;
-        background-color: @bg_network;
-}
-
 #custom-notification {
-    margin: 0px 0px;
-    padding: 0px 8px;
+    margin: 0px 4px;
+    padding: 0px 10px;
     border: 0px;
+    border-radius: 12px;
     color: #000000;
-    background-color: @bg_notifications;
+    background-color: #A0AAE3;
 
-}
-
-#memory {
-    background-color: @bg_memory;
 }
 
 #temperature {
         color: #beedea;
-        background-color: @bg_temperature;
-
 }
 
 #temperature.critical {
+        margin: 0px 3px;
+        padding: 0px 10px;
+        border-radius: 32px;
         color: #ff6f00;
+        background-color: rgba(30,30,50,0.0);
 }
 
 #wireplumber {
@@ -206,6 +187,15 @@ window {
         color: #787878;
 }
 
+
+#cpu,
+#memory,
+#disk,
+#temperature {
+        border-radius: 0px;
+        color: #beedea;
+        background-color: rgba(20,20,30,0.0);
+}
 
 #backlight {
       	margin: 0px 3px;
@@ -222,4 +212,53 @@ window {
 
 #tray menu {
 	background-color: rgba(12,13,41,0.95);
+}
+
+
+/*    Arrows    */
+
+#custom-arrow0 {    /* battery -- swaync */
+    font-size: 15pt;
+    color: @bg; 
+    background-color: @bg_battery; 
+}
+#custom-arrow1 {    /* bluetooth -- battery */
+    font-size: 15pt;
+    color: @bg_battery;
+    background-color: @bg_bluetooth;
+}
+#custom-arrow2 {    /* wireplumber -- bluetooth */
+    font-size: 15pt;
+    color: @bg_bluetooth;
+    background-color: @bg_wireplumber;
+}
+#custom-arrow3 {    /* MPRIS -- wireplumber */
+    font-size: 15pt;
+    color: @bg_wireplumber;
+    background-color: @bg;
+}
+#custom-arrow4 {    /* network -- MPRIS */
+    font-size: 15pt;
+    color: @bg_network;
+    background-color: @bg;
+}
+#custom-arrow5 {    /* date -- network */
+    font-size: 15pt;
+    color: @bg_date;
+    background-color: @bg_network;
+}
+#custom-arrow6 {    /* time -- date */
+    font-size: 15pt;
+    color: @bg_time;
+    background-color: @bg_date;
+}
+#custom-arrow7 {    /* icon -- time */
+    font-size: 15pt;
+    color: @bg;
+    background-color: @bg_time;
+}
+#custom-arrow8 {    /* icon -- time */
+    font-size: 15pt;
+    color: @bg_icon;
+    background-color: @bg;
 }
