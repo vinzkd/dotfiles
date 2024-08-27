@@ -11,6 +11,8 @@
 @define-color bg_date                 #0d0c12;
 @define-color bg_icon                 #313244;
 @define-color bg_memory               #1e1e2d;
+@define-color memory                  #ada8a8;
+
 @define-color bg_network              #181825;
 @define-color bg_notifications        #d3d9f0;
 @define-color bg_temperature          #0d0c12;
@@ -184,7 +186,8 @@ window {
 }
 
 #memory {
-    background-color: @bg_memory;
+        color: @memory;
+        background-color: @bg_memory;
 }
 
 #temperature {
