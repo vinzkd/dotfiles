@@ -26,8 +26,8 @@ alias cd="z"
 
 alias reboot="loginctl reboot"
 
-alias update="doas emerge -qavuDU @world && doas emerge --depclean"
-alias syncupdate="doas emerge --sync && doas emerge -qvuDN @world && doas emerge --depclean"
+alias update="sudo emerge -qavuDU @world && doas emerge --depclean"
+alias syncupdate="sudo emerge --sync && doas emerge -qvuDN @world && doas emerge --depclean"
 
 alias homespace="vinzk@192.168.1.75"
 
