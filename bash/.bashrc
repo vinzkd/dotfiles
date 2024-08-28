@@ -15,6 +15,8 @@ fi
 
 # Put your fun stuff here.
 
+set -o vi
+
 ## Aliases
 alias ls="eza --long --no-permissions"
 alias cd="z"
