@@ -26,8 +26,8 @@ alias cd="z"
 
 alias reboot="loginctl reboot"
 
-alias update="sudo emerge -qavuDU @world && doas emerge --depclean"
-alias syncupdate="sudo emerge --sync && doas emerge -qvuDN @world && doas emerge --depclean"
+alias update="sudo emerge -qavuDU @world && sudo emerge --depclean"
+alias syncupdate="sudo emerge --sync && sudo emerge -qvuDN @world && sudo emerge --depclean"
 
 alias homespace="vinzk@192.168.1.75"
 
@@ -43,4 +43,6 @@ source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh   # zsh-syntax-
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 source /usr/share/fzf/key-bindings.zsh
