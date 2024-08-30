@@ -14,11 +14,12 @@
   "modules-right": [
     "cpu",
     "memory",
+    "disk",
     "temperature",
     "network",
     "bluetooth",
-    "wireplumber",
     "backlight",
+    "wireplumber",
     "battery",
     "clock#date",
     "clock#time",
@@ -80,7 +81,7 @@
     "format-alt": "{:%A, %B %d, %Y (%R)}"
   },
   "clock#time": {
-    "format": "󰥔 {:%H:%M}",
+    "format": "󰅐 {:%H:%M}",
     "format-alt": "{:%A, %B %d, %Y (%R)}"
   },
   "clock#date": {
@@ -185,8 +186,8 @@
     "spacing": 10
   },
   "wireplumber": {
-    "format": "<span font='14'>{icon}</span> <span rise='1pt'>{volume}%</span>",
-    "format-muted": "<span font='12' rise='0pt'>󰖁</span> ---",
+    "format": "<span font='13'>{icon}</span> <span rise='1pt'>{volume}%</span>",
+    "format-muted": "<span font='12'>󰖁</span> ---",
     "on-click": "helvum",
     "format-icons": [
       "󰕿",
