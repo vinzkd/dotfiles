@@ -3,21 +3,28 @@
 /* Colors */
 @define-color bg                      #0d0c12;
 
+@define-color bg_backlight            #0d0c12;
+
 @define-color battery_warning         #fc3e0a;
-@define-color bg_battery              #1d1d2b;
+@define-color bg_battery              #0d0c12;
 
-@define-color bg_bluetooth            #1e1e2d;
-@define-color bg_cpu                  #181825;
+@define-color bg_bluetooth            #0d0c12;
+
+@define-color cpu                     #F5BDE6;
+@define-color bg_cpu                  #0d0c12;
+
 @define-color bg_date                 #0d0c12;
-@define-color bg_icon                 #313244;
-@define-color bg_memory               #1e1e2d;
-@define-color memory                  #ada8a8;
 
-@define-color bg_network              #181825;
+@define-color bg_icon                 #313244;
+
+@define-color memory                  #F5BDE6;
+@define-color bg_memory               #0d0c12;
+
+@define-color bg_network              #0d0c12;
 @define-color bg_notifications        #d3d9f0;
 @define-color bg_temperature          #0d0c12;
-@define-color bg_time                 #1d1d2b;
-@define-color bg_wireplumber          #181825;
+@define-color bg_time                 #0d0c12;
+@define-color bg_wireplumber          #0d0c12;
 @define-color bg_workspaces           #1d1d2b;
 @define-color bg_workspaces_button    #D3D9F0;
 
@@ -53,6 +60,7 @@ window {
 }
 
 /* Each module */
+#backlight,
 #battery,
 #bluetooth,
 #clock,
@@ -62,7 +70,7 @@ window {
 #network,
 #temperature,
 #wireplumber {
-    padding: 0px 16px;
+    padding: 0px 18px;
 }
 
 /*-----modules indv----*/
@@ -82,7 +90,7 @@ window {
     margin: 0px 4px;
     padding: 0px 0px;
     border-radius: 0px;
-    color: #090815;
+    color: #000000;
     background-color: @bg_workspaces_button;
 }
 
@@ -93,7 +101,7 @@ window {
 }
 
 #cpu {
-    color: #999999;
+    color: @cpu;
     background-color: @bg_cpu;
 }
 
@@ -108,16 +116,14 @@ window {
 }
 
 #backlight {
-	      margin: 0px 0px;
-        padding: 0px 10px;
         border-radius: 12px;
         color: #e0f9ff;
-        background-color: rgba(30,30,50,0.8);
+        background-color: @bg_backlight;
 }
 
 
 #battery {
-        color: #e0f9ff;
+        color: #A6DA95;
         background-color: @bg_battery;
 }
 
@@ -207,14 +213,6 @@ window {
 
 #wireplumber.muted {
         color: #787878;
-}
-
-
-#backlight {
-      	margin: 0px 3px;
-        padding: 0px 10px;
-        border-radius: 12px;
-        background-color: rgba(30,30,50,0.0);
 }
 
 #tray {
