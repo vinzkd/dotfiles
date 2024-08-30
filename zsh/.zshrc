@@ -23,13 +23,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # Aliases
 alias ls="eza --long --no-permissions"
 alias cd="z"
-
 alias reboot="loginctl reboot"
-
 alias update="sudo emerge -qavuDU @world && sudo emerge --depclean"
 alias syncupdate="sudo emerge --sync && sudo emerge -qvuDN @world && sudo emerge --depclean"
-
 alias homespace="vinzk@192.168.1.75"
+alias fetch="fastfetch"
 
 
 eval "$(zoxide init zsh)"         # zoxide
