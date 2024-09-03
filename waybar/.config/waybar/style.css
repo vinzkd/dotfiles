@@ -28,13 +28,15 @@
 @define-color bg_workspaces           #1d1d2b;
 @define-color bg_workspaces_button    #D3D9F0;
 
+/* Fonts */
+
 
 /* */
 
 * {
     border: none;
     border-radius: 0px;
-    font-family: UbuntuMono;
+    font-family: UbuntuMono, Symbols Nerd Font;
     font-size: 14px;
 }
 
@@ -70,7 +72,8 @@ window {
 #network,
 #temperature,
 #wireplumber {
-    padding: 0px 18px;
+        padding: 0px 18px;
+        
 }
 
 /*-----modules indv----*/
