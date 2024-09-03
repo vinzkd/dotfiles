@@ -13,10 +13,13 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/vinzk/.zshrc'
-autoload -Uz compinit
+
+autoload -Uz compinit promptinit
 compinit
+promptinit; prompt gentoo
 # End of lines added by compinstall
 
+zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
