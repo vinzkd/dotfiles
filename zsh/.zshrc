@@ -19,9 +19,15 @@ compinit
 promptinit; prompt gentoo
 # End of lines added by compinstall
 
+
+setopt autocd
+setopt correctall
+
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
 # Aliases
 alias ls="eza --long --no-permissions"
