@@ -16,11 +16,14 @@
     "memory",
     "disk",
     "temperature",
+    //"custom/space",
     "network",
     "bluetooth",
-    "backlight",
+    //"custom/space",
     "wireplumber",
+    "backlight",
     "battery",
+    //"custom/space",
     "clock#date",
     "clock#time",
     "custom/notification"
@@ -117,8 +120,8 @@
   "custom/icon": {
     "format": ""
   },
-  "custom/separator": {
-    "format": "|"
+  "custom/space": {
+    "format": " "
   },
   "disk": {
     "interval": 30,

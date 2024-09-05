@@ -1,32 +1,36 @@
-/* Styles */
-
 /* Colors */
-@define-color bg                      #0d0c12;
 
-@define-color bg_backlight            #0d0c12;
+@define-color battery                   #eff9fc;
+@define-color battery-charging          #e7ff87;
+@define-color battery-warning           #000000;
+@define-color bluetooth                 #eff9fc;
+@define-color cpu                       #eff9fc;
+@define-color date                      #eff9fc;
+@define-color memory                    #eff9fc;
+@define-color network                   #eff9fc;
+@define-color temperature               #eff9fc;
+@define-color temperature-critical      #fc7f3c;
+@define-color time                      #eff9fc;
 
-@define-color battery_warning         #fc3e0a;
-@define-color bg_battery              #0d0c12;
+@define-color bg                        #0d0c12;
+@define-color bg-backlight              #0d0c12;
+@define-color bg-battery                #0d0c12;
+@define-color bg-battery-charging       #e7ff87;
+@define-color bg-battery-warning        #fc463c;
+@define-color bg-bluetooth              #0d0c12;
+@define-color bg-cpu                    #0d0c12;
+@define-color bg-date                   #0d0c12;
+@define-color bg-icon                   #313244;
+@define-color bg-memory                 #0d0c12;
+@define-color bg-network                #0d0c12;
+@define-color bg-notifications          #d3d9f0;
+@define-color bg-temperature            #0d0c12;
+@define-color bg-temperature-critical   #fc7f3c;
+@define-color bg-time                   #0d0c12;
+@define-color bg-wireplumber            #0d0c12;
+@define-color bg-workspaces             #1d1d2b;
+@define-color bg-workspaces-button      #D3D9F0;
 
-@define-color bg_bluetooth            #0d0c12;
-
-@define-color cpu                     #F5BDE6;
-@define-color bg_cpu                  #0d0c12;
-
-@define-color bg_date                 #0d0c12;
-
-@define-color bg_icon                 #313244;
-
-@define-color memory                  #F5BDE6;
-@define-color bg_memory               #0d0c12;
-
-@define-color bg_network              #0d0c12;
-@define-color bg_notifications        #d3d9f0;
-@define-color bg_temperature          #0d0c12;
-@define-color bg_time                 #0d0c12;
-@define-color bg_wireplumber          #0d0c12;
-@define-color bg_workspaces           #1d1d2b;
-@define-color bg_workspaces_button    #D3D9F0;
 
 /* Fonts */
 
@@ -43,7 +47,7 @@
 window {
     margin: 0px 0px; 
     padding: 0px 0px;
-    background: @bg;
+    background-color: @bg;
 }
 
 /*-----module groups----*/
@@ -53,7 +57,7 @@ window {
     padding: 0px 0px;
 }
 .modules-center {
-	background-color: rgba(13,12,18,0.00);
+	background-color: rgba(13,12,18,0.0);
     margin: 0px 0 0 0;
 }
 .modules-left {
@@ -73,6 +77,7 @@ window {
 #temperature,
 #wireplumber {
         padding: 0px 18px;
+        border-bottom: 2px solid @bg;
         
 }
 
@@ -80,7 +85,7 @@ window {
 #workspaces {
 	margin: 0px 0px;
 	padding: 0px 4px 0px 0px;
-	background-color: @bg_workspaces;
+	background-color: @bg-workspaces;
 }
 
 #workspaces button {
@@ -94,7 +99,7 @@ window {
     padding: 0px 0px;
     border-radius: 0px;
     color: #000000;
-    background-color: @bg_workspaces_button;
+    background-color: @bg-workspaces-button;
 }
 
 #window {
@@ -105,42 +110,44 @@ window {
 
 #cpu {
     color: @cpu;
-    background-color: @bg_cpu;
+    background-color: @bg-cpu;
 }
 
 #custom-icon{
     color: #F5BDE6;
-    background-color: @bg_icon;
+    background-color: @bg-icon;
 }
 
 #mpris {
-  margin: 0px 20px 0px 0px;
-  padding: 0px 0px;
+        margin: 0px 20px 0px 0px;
+        padding: 0px 0px;
 }
 
 #backlight {
-        border-radius: 12px;
         color: #e0f9ff;
-        background-color: @bg_backlight;
+        background-color: @bg-backlight;
 }
 
 
 #battery {
-        color: #A6DA95;
-        background-color: @bg_battery;
+        color: @battery;
+        background-color: @bg-battery;
 }
 
 #battery.charging {
-        color: #e7ff87;
+        color: @battery-charging;
+        background-color: @bg;
+        border-bottom: 2px solid @bg-battery-charging;
 }
 
 #battery.warning {
-        color: @battery_warning;
+        color: @battery-warning;
+        background-color: @bg-battery-warning;
 }
 
 #bluetooth,
 #bluetooth.connected {
-        color: #bbddfc;
+        color: @bluetooth;
 }
 
 #bluetooth.off, 
@@ -152,17 +159,17 @@ window {
 #bluetooth.connected,
 #bluetooth.off,
 #bluetooth.disabled {
-        background-color: @bg_bluetooth;
+        background-color: @bg-bluetooth;
 }
 
 #clock.date {
-       color: #c5daed;
-       background-color: @bg_date;
+       color: @date;
+       background-color: @bg-date;
 }
 
 #clock.time {
-       color: #c5daed;
-       background-color: @bg_time;
+       color: @time;
+       background-color: @bg-time;
 }
 
 #custom-icon {
@@ -175,14 +182,20 @@ window {
   color: #888888;
 }
 
+
+#memory {
+        color: @memory;
+        background-color: @bg-memory;
+}
+
 #network {
-        color: #bbddfc;
-        background-color: @bg_network;
+        color: @network;
+        background-color: @bg-network;
 }
 
 #network.disconnected {
         color: #787878;
-        background-color: @bg_network;
+        background-color: @bg-network;
 }
 
 #custom-notification {
@@ -190,28 +203,28 @@ window {
     padding: 0px 8px;
     border: 0px;
     color: #000000;
-    background-color: @bg_notifications;
+    background-color: @bg-notifications;
 
 }
 
-#memory {
-        color: @memory;
-        background-color: @bg_memory;
+#custom-space {
+        padding: 0px 10px;
 }
 
 #temperature {
-        color: #beedea;
-        background-color: @bg_temperature;
+        color: @temperature;
+        background-color: @bg-temperature;
 
 }
 
 #temperature.critical {
-        color: #ff6f00;
+        color: @temperature-critical;
+        border-bottom: 2px solid @bg-temperature-critical;
 }
 
 #wireplumber {
         color: #e0f9ff;
-        background-color: @bg_wireplumber;
+        background-color: @bg-wireplumber;
 }
 
 #wireplumber.muted {
