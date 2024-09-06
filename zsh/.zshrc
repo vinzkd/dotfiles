@@ -23,7 +23,6 @@ promptinit; prompt gentoo
 setopt autocd
 setopt correctall
 
-zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
