@@ -4,6 +4,7 @@
 @define-color battery-charging          #e7ff87;
 @define-color battery-warning           #000000;
 @define-color bluetooth                 #eff9fc;
+@define-color bluetooth-connected       #8AADF4;
 @define-color cpu                       #eff9fc;
 @define-color date                      #eff9fc;
 @define-color memory                    #eff9fc;
@@ -145,9 +146,13 @@ window {
         background-color: @bg-battery-warning;
 }
 
-#bluetooth,
-#bluetooth.connected {
+#bluetooth {
         color: @bluetooth;
+}
+
+#bluetooth.connected {
+        color: @bluetooth-connected;
+        border-bottom: 2px solid @bluetooth-connected;
 }
 
 #bluetooth.off, 
