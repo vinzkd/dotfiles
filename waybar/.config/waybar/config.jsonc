@@ -5,29 +5,31 @@
   "margin-left": 0,
   "margin-right": 0,
   "margin-bottom": 0,
+  "height": 26,
+
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
   ],
+  
   "modules-center": [
   ],
+
   "modules-right": [
     "cpu",
     "memory",
     "disk",
     "temperature",
-    //"custom/space",
     "network",
     "backlight",
     "battery",
     "bluetooth",
-    //"custom/space",
     "wireplumber",
-    //"custom/space",
     "clock#date",
     "clock#time",
     "custom/notification"
   ],
+
   // modules
   "hyprland/window": {
     "format": "{}",
