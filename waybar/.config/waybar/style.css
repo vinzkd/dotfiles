@@ -2,7 +2,7 @@
 
 @define-color battery                   #eff9fc;
 @define-color battery-charging          #e7ff87;
-@define-color battery-warning           #000000;
+@define-color battery-warning           #fc463c;
 @define-color bluetooth                 #eff9fc;
 @define-color bluetooth-connected       #88ABF1;
 @define-color cpu                       #eff9fc;
@@ -17,7 +17,6 @@
 @define-color bg-backlight              #0d0c12;
 @define-color bg-battery                #0d0c12;
 @define-color bg-battery-charging       #e7ff87;
-@define-color bg-battery-warning        #fc463c;
 @define-color bg-bluetooth              #0d0c12;
 @define-color bg-cpu                    #0d0c12;
 @define-color bg-date                   #0d0c12;
@@ -143,7 +142,7 @@ window {
 
 #battery.warning {
         color: @battery-warning;
-        border-bottom: 2px solid @bg-battery-warning;
+        border-bottom: 2px solid @battery-warning;
 }
 
 #bluetooth {
