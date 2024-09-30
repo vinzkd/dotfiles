@@ -30,8 +30,8 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 # Aliases
 alias ls="eza --long --no-permissions"
 alias cd="z"
-alias syncqupdate="sudo emerge --sync && notify-send -e 'Finished syncing repositories' 'Please confirm updated packages' && sudo emerge -aqvuDN @world && notify-send -e 'Finished emerge @world' 'Cleaning dependencies...' && sudo emerge --depclean"
-alias syncupdate="sudo emerge --sync && notify-send -e 'Finished syncing repositories' 'Please confirm updated packages' && sudo emerge -avuDN @world && notify-send -e 'Finished emerge @world' 'Cleaning dependencies...' && sudo emerge --depclean"
+alias syncqupdate="sudo emerge --sync && notify-send -t 10000 -e 'Finished syncing repositories' 'Please confirm updated packages' && sudo emerge -aqvuDN @world && notify-send -t 10000 -e 'Finished emerge @world' 'Cleaning dependencies...' && sudo emerge --depclean"
+alias syncupdate="sudo emerge --sync && notify-send -t 10000 -e 'Finished syncing repositories' 'Please confirm updated packages' && sudo emerge -avuDN @world && notify-send -t 10000 -e 'Finished emerge @world' 'Cleaning dependencies...' && sudo emerge --depclean"
 alias update="notify-send -e 'Finished syncing repositories' 'Please confirm updated packages' && sudo emerge -avuDN @world && notify-send -e 'Finished emerge @world' 'Cleaning dependencies...' && sudo emerge --depclean"
 alias homespace="vinzk@192.168.1.75"
 alias fetch="fastfetch"
