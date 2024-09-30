@@ -89,13 +89,14 @@ window {
 }
 
 #workspaces button {
-	margin: 0px 5px;
+	margin: 0px 4px;
 	padding: 0px 0px;
 	color: #e5e5e5;
 }
 
 #workspaces button.active {
-    margin: 0px 5px;
+    font-weight: bold;
+    margin: 0px 4px;
     padding: 0px 0px;
     border-radius: 0px;
     color: #000000;
