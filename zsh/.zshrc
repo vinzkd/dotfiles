@@ -17,9 +17,13 @@ zstyle :compinstall filename '/home/vinzk/.zshrc'
 autoload -Uz compinit promptinit
 compinit
 promptinit; prompt gentoo
+
+# Created by `pipx` on 2024-07-23 21:07:14
+export PATH="$PATH:/home/vinzk/.local/bin"
 # End of lines added by compinstall
 
 
+# User config
 setopt autocd
 
 zstyle ':completion:*' menu select
@@ -30,17 +34,10 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 # Aliases
 alias ls="eza --long --no-permissions"
 alias cd="z"
-alias syncqupdate="sudo emerge --sync && notify-send -t 10000 -e 'Finished syncing repositories' 'Please confirm updated packages' && sudo emerge -aqvuDN @world && notify-send -t 10000 -e 'Finished emerge @world' 'Cleaning dependencies...' && sudo emerge --depclean"
-alias syncupdate="sudo emerge --sync && notify-send -t 10000 -e 'Finished syncing repositories' 'Please confirm updated packages' && sudo emerge -avuDN @world && notify-send -t 10000 -e 'Finished emerge @world' 'Cleaning dependencies...' && sudo emerge --depclean"
-alias update="notify-send -e 'Finished syncing repositories' 'Please confirm updated packages' && sudo emerge -avuDN @world && notify-send -e 'Finished emerge @world' 'Cleaning dependencies...' && sudo emerge --depclean"
 alias homespace="vinzk@192.168.1.75"
 alias fetch="fastfetch"
 
-
 eval "$(zoxide init zsh)"         # zoxide
-
-# Created by `pipx` on 2024-07-23 21:07:14
-export PATH="$PATH:/home/vinzk/.local/bin"
 
 source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh   # zsh-syntax-highlighting
 . /usr/share/zsh/site-functions/zsh-autosuggestions.zsh            # zsh-autosuggestions
