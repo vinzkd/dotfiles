@@ -1,3 +1,9 @@
-#!/bin/bash
-# sleep 2  # Optional: Add a delay if needed
-exec fastfetch
+#!/bin/zsh
+
+fastfetch
+
+read
+
+# while true; do 
+# 	sleep 1
+# done
