@@ -48,3 +48,5 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 source /usr/share/fzf/key-bindings.zsh
+
+export PATH=$PATH:/home/vinzk/.spicetify
