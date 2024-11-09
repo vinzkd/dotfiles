@@ -1,17 +1,18 @@
 /* Colors */
 
-@define-color battery                   #eff9fc;
+@define-color battery                   #d3d9f0;
 @define-color battery-charging          #e7ff87;
 @define-color battery-warning           #fc463c;
-@define-color bluetooth                 #eff9fc;
+@define-color bluetooth                 #d3d9f0;
 @define-color bluetooth-connected       #88ABF1;
-@define-color cpu                       #eff9fc;
-@define-color date                      #eff9fc;
-@define-color memory                    #eff9fc;
-@define-color network                   #eff9fc;
-@define-color temperature               #eff9fc;
+@define-color cpu                       #d3d9f0;
+@define-color disk                      #d3d9f0;
+@define-color date                      #d3d9f0;
+@define-color memory                    #d3d9f0;
+@define-color network                   #d3d9f0;
+@define-color temperature               #d3d9f0;
 @define-color temperature-critical      #fc7f3c;
-@define-color time                      #eff9fc;
+@define-color time                      #d3d9f0;
 
 @define-color bg                        #0d0c12;
 @define-color bg-backlight              #0d0c12;
@@ -19,6 +20,7 @@
 @define-color bg-battery-charging       #e7ff87;
 @define-color bg-bluetooth              #0d0c12;
 @define-color bg-cpu                    #0d0c12;
+@define-color bg-disk                   #0d0c12;
 @define-color bg-date                   #0d0c12;
 @define-color bg-icon                   #313244;
 @define-color bg-memory                 #0d0c12;
@@ -28,8 +30,8 @@
 @define-color bg-temperature-critical   #fc7f3c;
 @define-color bg-time                   #0d0c12;
 @define-color bg-wireplumber            #0d0c12;
-@define-color bg-workspaces             #1d1d2b;
-@define-color bg-workspaces-button      #D3D9F0;
+@define-color bg-workspaces             #0d0c12;
+@define-color bg-workspaces-button      #d3d9f0;
 
 
 /* Fonts */
@@ -103,6 +105,16 @@ window {
     background-color: @bg-workspaces-button;
 }
 
+/*-----sway------*/
+#workspaces button.focused {
+    font-weight: bold;
+    margin: 0px 4px;
+    padding: 0px 0px;
+    border-radius: 0px;
+    color: #000000;
+    background-color: @bg-workspaces-button;
+}
+
 #window {
   font-weight: bold;
 	margin: 0px 0px 0px 0px;
@@ -112,6 +124,11 @@ window {
 #cpu {
     color: @cpu;
     background-color: @bg-cpu;
+}
+
+#disk {
+        color: @disk;
+        background-color: @bg-disk;
 }
 
 #custom-icon{
@@ -135,15 +152,15 @@ window {
         background-color: @bg-battery;
 }
 
+#battery.warning {
+        color: @battery-warning;
+        border-bottom: 2px solid @battery-warning;
+}
+
 #battery.charging {
         color: @battery-charging;
         background-color: @bg;
         border-bottom: 2px solid @bg-battery-charging;
-}
-
-#battery.warning {
-        color: @battery-warning;
-        border-bottom: 2px solid @battery-warning;
 }
 
 #bluetooth {
