@@ -1,56 +1,48 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
+
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
 set $term foot
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-# set $menu dmenu_path | wmenu | xargs swaymsg exec --
-#set $menu dmenu_path | wofi -S drun | xargs swaymsg exec --
 set $menu dmenu_path | tofi-drun | xargs swaymsg exec --
+set $explorer thunar
+
+# Launch apps
+exec brightnessctl set 80%
+exec gentoo-pipewire-launcher
+exec udiskie
+exec ~/.config/hypr/scripts/screenidle.sh
+exec swaync
+# exec syncthing -no-browser
+exec kdeconnectd
+exec kdeconnect-cli -d 27017523_5349_44ef_879b_6818476ec30c
+exec waybar -c ~/.config/waybar/sway.jsonc
+exec wl-paste --type text --watch cliphist store #Stores only text data
+exec wl-paste --type image --watch cliphist store #Stores only image data
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/hyprland_error.png fill
-#
-# Example configuration:
-#
+output eDP-1 bg ~/Wallpapers/anime_night.png fill
 output eDP-1 resolution 1920x1080 position 0,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
 #
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+#exec hypridle
 
 ### Input configuration
 #
 # Example configuration:
 #
 input "1267:32:Elan_Touchpad" {
+	pointer_accel 0.9
+       accel_profile "flat"
        dwt enabled
        tap enabled
        natural_scroll enabled
@@ -60,12 +52,20 @@ input "1267:32:Elan_Touchpad" {
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+### Window rules
+for_window [tiling] border pixel 0
+for_window [floating] border pixel 3
+for_window [app_id="waypaper"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+
 ### Key bindings
 #
 # Basics:
 #
 # Start a terminal
-bindsym $mod+Return exec $term
+bindsym $mod+space exec $term
+bindsym $mod+Shift+space exec $term -T "Foot"
+for_window [title="Foot"] floating enable
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -81,10 +81,23 @@ bindsym $mod+d exec $menu
 floating_modifier $mod normal
 
 # Reload the configuration file
-bindsym $mod+Shift+r reload
+bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Ctrl+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+# Power/Hibernate
+bindsym $mod+Ctrl+P exec loginctl poweroff
+bindsym $mod+Ctrl+H exec "notify-send -e 'Hibernating' && hyprlock & loginctl hibernate"
+
+# Reboot
+bindsym $mod+Ctrl+r exec loginctl reboot
+
+# Suspend
+bindsym $mod+Ctrl+o exec "hyprlock & loginctl suspend"
+
+# Lock screen
+bindsym $mod+Ctrl+u exec hyprlock
 
 # Volume controls
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
@@ -95,10 +108,48 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 
-# Printscreen
-bindsym Print exec grim -g "$(slurp)"
+bindsym Shift+XF86MonBrightnessUp exec brightnessctl s +20%
+bindsym Shift+XF86MonBrightnessDown exec brightnessctl s 20%-
 
-#
+bindsym $mod+XF86MonBrightnessUp exec brightnessctl s 100%
+bindsym $mod+XF86MonBrightnessDown exec brightnessctl s 1%
+
+# Screen idle
+bindsym $mod+Ctrl+i exec ~/.config/hypr/scripts/screenidle.sh
+
+# Bluetooth
+bindsym $mod+b exec $term -T "Bluetooth Control" -e bluetoothctl
+for_window [title="Bluetooth Control"] floating enable
+
+# Network
+bindsym $mod+n exec $term -T "Network Control" -e nmtui
+for_window [title="Network Control"] floating enable
+
+# Printscreen
+bindsym Print exec hyprshot -m region
+bindsym $mod+Print exec hyprshot -m output
+bindsym Shift+Print exec hyprshot -m window
+
+# Notifications
+bindsym $mod+a exec swaync-client -t -sw
+
+# cliphist & wofi
+bindsym $mod+v exec cliphist list | tofi -c ~/.config/tofi/config-clipboard | cliphist decode | wl-copy
+
+# File explorer
+bindsym $mod+x exec thunar
+for_window [app_id=thunar] floating enable, resize set 1000 800
+
+# color picker
+bindsym $mod+c exec hyprpicker -a
+
+# waypaper
+bindsym XF86Tools exec waypaper
+
+# mouseless
+bindsym XF86Keyboard exec ~/.config/mouseless/toggle_mouseless.sh
+
+
 # Moving around:
 #
 # Move your focus around
@@ -155,37 +206,32 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # You can "split" the current object of your focus with
 # $mod+b or $mod+v, for horizontal and vertical splits
 # respectively.
-bindsym $mod+b splith
-bindsym $mod+v splitv
+bindsym $mod+SHIFT+b splith
+bindsym $mod+SHIFT+v splitv
 
 # Switch the current container between different layout styles
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+CTRL+s layout stacking
+bindsym $mod+CTRL+w layout tabbed
+bindsym $mod+CTRL+x layout toggle split
 
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
 # Toggle the current focus between tiling and floating mode
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # Swap focus between the tiling area and the floating area
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # Move focus to the parent container
-bindsym $mod+a focus parent
+bindsym $mod+SHIFT+a focus parent
 #
 # Scratchpad:
-#
-# Sway has a "scratchpad", which is a bag of holding for windows.
-# You can send windows there and get them back later.
-
 # Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+s move scratchpad
 
-# Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+bindsym $mod+s scratchpad show
 #
 # Resizing containers:
 #
@@ -213,8 +259,8 @@ bindsym $mod+r mode "resize"
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #13121b #c2dce3 #2e9ef4   #222222
-client.focused_inactive #13121b #13121b #ffffff #484e50   #5f676a
+client.focused          #4c7899 #13121b #c2dce3 #2e9ef4   #ffffff
+client.focused_inactive #ffffff #13121b #ffffff #484e50   #5f676a
 client.unfocused        #333333 #13121b #555555 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
@@ -223,17 +269,12 @@ client.background	#ffffff
 
 
 # Change border size
-default_border none
-default_floating_border none
+# default_border pixel 1px 
+# default_floating_border pixel 10px
 
 # Gaps
 gaps inner 4
 smart_gaps on
 
-
-# Launch apps
-exec dunst
-exec waybar
-exec fastfetch
 
 include /etc/sway/config.d/*
