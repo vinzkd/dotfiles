@@ -3,10 +3,12 @@
 battery_capacity=$(cat /sys/class/power_supply/BAT0/capacity)
 battery_status=$(cat /sys/class/power_supply/BAT0/status)
 
-symbol_font="Symbols Nerd Font 20"
+symbol_font="Symbols Nerd Font 18"
 
 charging_color=#e7ff87
 critical_color=#fc463c
+
+# echo "${battery_capacity}% <span font='$symbol_font' rise ='1pt'>󰂂</span>"
 
 if [ $battery_status == "Charging" ]; then
     echo "<span foreground='$charging_color'>${battery_capacity}%</span> <span font='24' rise ='-1pt' foreground='$charging_color'>󱐌</span>"
