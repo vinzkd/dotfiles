@@ -13,5 +13,5 @@ font-size = 20
 hint-font = false
 ascii-input = true
 
-background-color = #000A
+background-color = #000
 selection-color = #b0b4eb
