@@ -1,7 +1,7 @@
-### Variables
+## Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
+set $mod Mod4 
 
 set $left h
 set $down j
@@ -16,30 +16,24 @@ set $explorer thunar
 exec brightnessctl set 80%
 exec gentoo-pipewire-launcher
 exec udiskie
-exec ~/.config/hypr/scripts/screenidle.sh
+exec hypridle
 exec swaync
 # exec syncthing -no-browser
 exec kdeconnectd
 exec kdeconnect-cli -d 27017523_5349_44ef_879b_6818476ec30c
+exec thunderbird
 exec waybar -c ~/.config/waybar/sway.jsonc
+exec gammastep -l 35.227085:-80.843124
 exec wl-paste --type text --watch cliphist store #Stores only text data
 exec wl-paste --type image --watch cliphist store #Stores only image data
 
 ### Output configuration
-#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
 output eDP-1 bg ~/Wallpapers/anime_night.png fill
 output eDP-1 resolution 1920x1080 position 0,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-#exec hypridle
 
 ### Input configuration
-#
-# Example configuration:
-#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
 input "1267:32:Elan_Touchpad" {
 	pointer_accel 0.9
        accel_profile "flat"
@@ -48,19 +42,17 @@ input "1267:32:Elan_Touchpad" {
        natural_scroll enabled
        middle_emulation enabled
 }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 ### Window rules
 for_window [tiling] border pixel 0
-for_window [floating] border pixel 3
+for_window [floating] border pixel 1
+# for_window [app_id="firefox"] floating enable, resize set 1000, 1000
+for_window [app_id="thunar"] floating enable, resize set 1000 800
+for_window [app_id="thunderbird"] move to workspace 11
 for_window [app_id="waypaper"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 
 ### Key bindings
-#
-# Basics:
 #
 # Start a terminal
 bindsym $mod+space exec $term
@@ -74,10 +66,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
 
 # Drag floating windows by holding down $mod and left mouse button.
-# Resize them with right mouse button + $mod.
-# Despite the name, also works for non-floating windows.
-# Change normal to inverse to use left mouse button for resizing and right
-# mouse button for dragging.
 floating_modifier $mod normal
 
 # Reload the configuration file
@@ -111,8 +99,12 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym Shift+XF86MonBrightnessUp exec brightnessctl s +20%
 bindsym Shift+XF86MonBrightnessDown exec brightnessctl s 20%-
 
+bindsym Alt+XF86MonBrightnessUp exec brightnessctl s +1%
+bindsym Alt+XF86MonBrightnessDown exec brightnessctl s 1%-
+
 bindsym $mod+XF86MonBrightnessUp exec brightnessctl s 100%
 bindsym $mod+XF86MonBrightnessDown exec brightnessctl s 1%
+
 
 # Screen idle
 bindsym $mod+Ctrl+i exec ~/.config/hypr/scripts/screenidle.sh
@@ -138,7 +130,6 @@ bindsym $mod+v exec cliphist list | tofi -c ~/.config/tofi/config-clipboard | cl
 
 # File explorer
 bindsym $mod+x exec thunar
-for_window [app_id=thunar] floating enable, resize set 1000 800
 
 # color picker
 bindsym $mod+c exec hyprpicker -a
@@ -187,6 +178,8 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+bindsym $mod+e workspace number 11
+bindsym $mod+plus workspace number 12
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
@@ -198,6 +191,8 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+e move container to workspace number 11
+bindsym $mod+Shift+plus move container to workspace number 12
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 #
@@ -259,7 +254,7 @@ bindsym $mod+r mode "resize"
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #13121b #c2dce3 #2e9ef4   #ffffff
+client.focused          #4c7899 #13121b #c2dce3 #2e9ef4   #a5bfc9
 client.focused_inactive #ffffff #13121b #ffffff #484e50   #5f676a
 client.unfocused        #333333 #13121b #555555 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -269,8 +264,8 @@ client.background	#ffffff
 
 
 # Change border size
-# default_border pixel 1px 
-# default_floating_border pixel 10px
+default_border none 
+default_floating_border pixel 1px
 
 # Gaps
 gaps inner 4
