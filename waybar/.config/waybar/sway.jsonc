@@ -8,6 +8,7 @@
   "height": 26,
 
   "modules-left": [
+    "sway/mode",
     "sway/workspaces",
     "sway/window"
   ],
@@ -31,6 +32,10 @@
   ],
 
   // modules
+  "sway/mode": {
+    "format": " {}",
+    "max-length": 50
+  },
   "sway/window": {
     "format": "{}",
     "max-length": 80,

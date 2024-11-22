@@ -5,7 +5,7 @@
   "margin-left": 0,
   "margin-right": 0,
   "margin-bottom": 0,
-  "height": 26,
+  "height": 28,
 
   "modules-left": [
     "hyprland/workspaces",
@@ -25,6 +25,7 @@
     "battery",
     "bluetooth",
     "wireplumber",
+    //"clock",
     "clock#date",
     "clock#time",
     "custom/notification"
@@ -82,7 +83,7 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   },
   "clock": {
-    "format": "󰥔 {:%m/%e %H:%M}",
+    "format": "󰥔 {:%m-%d-%y, %H:%M}",
     "format-alt": "{:%A, %B %d, %Y (%R)}"
   },
   "clock#time": {
@@ -90,7 +91,7 @@
     "format-alt": "󰅐 {:%I:%M %p}"
   },
   "clock#date": {
-    "format": "󰃭 {:%m/%d}",
+    "format": "󰃭 {:%m-%d-%y}",
     "format-alt": "󰃭 {:%A, %B %d, %Y}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {

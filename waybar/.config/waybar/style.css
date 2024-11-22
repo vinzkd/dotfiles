@@ -1,18 +1,21 @@
 /* Colors */
 
-@define-color battery                   #d3d9f0;
+@define-color backlight                 #FFFFFF;
+@define-color battery                   #A6DA95;
 @define-color battery-charging          #e7ff87;
 @define-color battery-warning           #fc463c;
 @define-color bluetooth                 #d3d9f0;
 @define-color bluetooth-connected       #88ABF1;
-@define-color cpu                       #d3d9f0;
-@define-color disk                      #d3d9f0;
+@define-color cpu                       #dd8794;
+@define-color disk                      #f9d4ef;
 @define-color date                      #d3d9f0;
-@define-color memory                    #d3d9f0;
-@define-color network                   #d3d9f0;
-@define-color temperature               #d3d9f0;
+@define-color memory                    #bfa4ea;
+@define-color network                   #a4bbea;
+@define-color temperature               #a1e2d9;
 @define-color temperature-critical      #fc7f3c;
 @define-color time                      #d3d9f0;
+@define-color workspace                 #d3d9f0;
+@define-color workspace-active          #000000;
 
 @define-color bg                        #0d0c12;
 @define-color bg-backlight              #0d0c12;
@@ -25,7 +28,7 @@
 @define-color bg-icon                   #313244;
 @define-color bg-memory                 #0d0c12;
 @define-color bg-network                #0d0c12;
-@define-color bg-notifications          #d3d9f0;
+@define-color bg-notifications          #3b3f4f;
 @define-color bg-temperature            #0d0c12;
 @define-color bg-temperature-critical   #fc7f3c;
 @define-color bg-time                   #0d0c12;
@@ -42,8 +45,8 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: UbuntuMono, Symbols Nerd Font;
-    font-size: 14px;
+    font-family: JetBrains Mono, Symbols Nerd Font;
+    font-size: 12px;
 }
 
 window {
@@ -78,7 +81,7 @@ window {
 #network,
 #temperature,
 #wireplumber {
-        padding: 0px 18px;
+        padding: 0px 16px;
         border-bottom: 2px solid @bg;
         
 }
@@ -93,7 +96,7 @@ window {
 #workspaces button {
 	margin: 0px 4px;
 	padding: 0px 0px;
-	color: #e5e5e5;
+	color: @workspace;
 }
 
 #workspaces button.active {
@@ -101,7 +104,7 @@ window {
     margin: 0px 4px;
     padding: 0px 0px;
     border-radius: 0px;
-    color: #000000;
+    color: @workspace-active;
     background-color: @bg-workspaces-button;
 }
 
@@ -116,7 +119,7 @@ window {
 }
 
 #window {
-  font-weight: bold;
+        font-weight: bold;
 	margin: 0px 0px 0px 0px;
 	padding: 0px 20px; 
 }
@@ -142,7 +145,7 @@ window {
 }
 
 #backlight {
-        color: #e0f9ff;
+        color: @backlight;
         background-color: @bg-backlight;
 }
 
@@ -224,7 +227,7 @@ window {
     margin: 0px 0px;
     padding: 0px 8px;
     border: 0px;
-    color: #000000;
+    color: #FFFFFF;
     background-color: @bg-notifications;
 
 }
