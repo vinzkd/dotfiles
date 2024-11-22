@@ -1,5 +1,7 @@
 #!/bin/bash
 
+config=/home/vinzk/.config/hypr/hypridle.conf
+
 echo "Initializing hypridle.sh"
 
 # Check if hypridle is on.
@@ -13,5 +15,5 @@ else
     echo "hypridle is stopped"
     echo "Starting hypridle"
     notify-send -t 5000 -e "Screen idle on"
-    hypridle
+    hypridle -c $config 
 fi
