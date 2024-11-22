@@ -1,5 +1,5 @@
 {
-  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "$schema": "$XDG_CONFIG_HOME/swaync/configSchema.json",
   "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
@@ -50,8 +50,9 @@
   "widgets": [
     "inhibitors",
     "title",
-    "dnd",
-    "notifications"
+    "notifications",
+    "mpris",
+    "buttons-grid"
   ],
   "widget-config": {
     "inhibitors": {
@@ -78,11 +79,40 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "直",
+          "label": "",
           "type": "toggle",
           "active": true,
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update_command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+          "command": "/home/vinzk/.config/gammastep/toggle_gammastep.sh"
+        },
+        {
+          "label": "",
+          "type": "toggle",
+          "active": false,
+          "command": "swaync-client -d"
+        },
+        {
+          "label": "H",
+          "type": "toggle",
+          "active": false,
+          "command": "notify-send 'Hey whatsup'"
+        },
+        {
+          "label": "L",
+          "type": "toggle",
+          "active": false,
+          "command": "/home/vinzk/.config/gammastep/toggle_gammastep.sh"
+        },
+        {
+          "label": "O",
+          "type": "toggle",
+          "active": false,
+          "command": "notify-send 'Hey whatsup'"
+        },
+        {
+          "label": "L",
+          "type": "toggle",
+          "active": false,
+          "command": "notify-send 'Hey whatsup'"
         }
       ]
     }

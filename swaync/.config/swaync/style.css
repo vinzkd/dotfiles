@@ -1,16 +1,73 @@
-@define-color cc-bg rgba(13, 12, 18, 0.85);
-@define-color noti-border-color rgba(163, 221, 225, 0.8);
-@define-color noti-bg rgba(13, 12, 18, 0.9);
+
+
+@define-color cc-bg #0d0c12;
+@define-color cc-border #1f1d2b;
+@define-color noti-border-color #a5bfc9;
+@define-color noti-bg rgb(13, 12, 18);
 @define-color noti-bg-opaque rgb(13, 12, 18);
 @define-color noti-bg-darker rgb(38, 38, 38);
 @define-color noti-bg-hover rgb(56, 56, 56);
 @define-color noti-bg-hover-opaque rgb(56, 56, 56);
-@define-color noti-bg-focus rgba(48, 48, 48, 0.4);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
+@define-color noti-bg-focus rgba(48, 48, 48, 1.0);
+@define-color noti-close-bg #0d0c12;
+@define-color noti-close-bg-hover #313244;
 @define-color text-color rgb(255, 255, 255);
 @define-color text-color-disabled rgb(150, 150, 150);
 @define-color bg-selected rgb(0, 128, 255);
+@define-color dnd-button #D3D9F0;
+@define-color buttonsgrid-bg #0d0c12;
+@define-color buttonsgrid-button #313244;
+@define-color buttonsgrid-active #75878e;
+
+/* Control Center */
+.control-center {
+  /* The Control Center which contains the old notifications + widgets */
+  background: @cc-bg;
+  color: @text-color;
+  border: 2px solid @cc-border;
+  border-radius: 2px;
+  margin: 2px;
+  padding: 4px;
+}
+
+.control-center .control-center-list-placeholder {
+  /* The placeholder when there are no notifications */
+  opacity: 0.5;
+}
+
+.control-center .control-center-list {
+  /* List of notifications */
+  background: transparent;
+}
+
+.control-center .control-center-list .notification {
+  background: @cc-bg;
+  color: @cc-bg;
+}
+
+.control-center .control-center-list .notification .notification-default-action,
+.control-center .control-center-list .notification .notification-action {
+  transition: opacity 400ms ease-in-out, background 0.15s ease-in-out;
+}
+
+.control-center .control-center-list .notification .notification-default-action:hover,
+.control-center .control-center-list .notification .notification-action:hover {
+  background-color: @noti-bg-hover;
+}
+
+.blank-window {
+  /* Window behind control center and on all other monitors */
+  background: transparent;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.floating-notifications .notification {
+  box-shadow: none;
+}
+
 .notification-row {
   outline: none;
 }
@@ -258,68 +315,25 @@
   background-color: @noti-bg-hover-opaque;
 }
 
-.control-center {
-  /* The Control Center which contains the old notifications + widgets */
-  background: @cc-bg;
-  color: @text-color;
-  border-radius: 0px;
-}
-
-.control-center .control-center-list-placeholder {
-  /* The placeholder when there are no notifications */
-  opacity: 0.5;
-}
-
-.control-center .control-center-list {
-  /* List of notifications */
-  background: transparent;
-}
-
-.control-center .control-center-list .notification {
-  background: @cc-bg;
-  color: @cc-bg;
-}
-
-.control-center .control-center-list .notification .notification-default-action,
-.control-center .control-center-list .notification .notification-action {
-  transition: opacity 400ms ease-in-out, background 0.15s ease-in-out;
-}
-
-.control-center .control-center-list .notification .notification-default-action:hover,
-.control-center .control-center-list .notification .notification-action:hover {
-  background-color: @noti-bg-hover;
-}
-
-.blank-window {
-  /* Window behind control center and on all other monitors */
-  background: transparent;
-}
-
-.floating-notifications {
-  background: transparent;
-}
-
-.floating-notifications .notification {
-  box-shadow: none;
-}
 
 /*** Widgets ***/
 /* Title widget */
 .widget-title {
   color: @text-color;
-  margin: 8px;
+  margin: 10px 10px;
+  font-family: Ubuntu;
   font-size: 1.5rem;
 }
 
 /* clear all button */
 .widget-title > button {
-  font-size: initial;
+  font-size: 16px;
   color: @text-color;
-  text-shadow: none;
+  padding: 12px 16px;
   background: @noti-bg;
   border: 1px solid @noti-border-color;
   box-shadow: none;
-  border-radius: 0px;
+  border-radius: 4px;
 }
 
 .widget-title > button:hover {
@@ -329,7 +343,7 @@
 /* Do not disturb widget */
 .widget-dnd {
   color: @text-color;
-  margin: 8px;
+  margin: 18px;
   font-size: 1.1rem;
 }
 
@@ -346,7 +360,7 @@
 }
 
 .widget-dnd > switch slider {
-  background: @noti-bg-hover;
+  background: @dnd-button;
   border-radius: 16px;
 }
 
@@ -371,7 +385,7 @@
   padding: 16px;
   margin: 16px 20px;
   background-color: @mpris-album-art-overlay;
-  border-radius: 12px;
+  border-radius: 4px;
 }
 
 .widget-mpris .widget-mpris-player button:hover {
@@ -384,6 +398,7 @@
 }
 
 .widget-mpris .widget-mpris-player .widget-mpris-title {
+  font-family: UbuntuMono;
   font-weight: bold;
   font-size: 1.25rem;
 }
@@ -408,21 +423,25 @@
   /* Change player side buttons insensitive */
 }
 
-/* Buttons widget */
+/* Grid Buttons widget */
 .widget-buttons-grid {
-  padding: 8px;
-  margin: 8px;
+  font-size: 36px;
+  margin: 18px 12px;
   border-radius: 12px;
-  background-color: @noti-bg;
+  background-color: @buttonsgrid-bg;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button {
-  background: @noti-bg;
-  border-radius: 12px;
+  font-family: SymbolsNerdFont-Regular;
+  padding: 18px 42px;
+  background: @buttonsgrid-button;
+  border: none;
+  border-radius: 2px;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
   /* style given to the active toggle button */
+  background: @buttonsgrid-active;
 }
 
 /* Menubar widget */
