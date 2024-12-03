@@ -35,6 +35,8 @@ zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 alias ls="eza --long --no-permissions"
 alias cd="z"
 alias homespace="vinzk@192.168.1.75"
+alias pispace="vinzk@192.168.1.211"
+alias pispace2="vinzk@192.168.1.213"
 alias fetch="fastfetch"
 
 eval "$(zoxide init zsh)"         # zoxide
