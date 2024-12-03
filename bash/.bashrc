@@ -13,6 +13,8 @@ if [[ $- != *i* ]]; then
   return
 fi
 
+alias grep='grep --color=auto'
+
 # Put your fun stuff here.
 
 set -o vi
