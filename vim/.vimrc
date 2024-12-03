@@ -13,7 +13,7 @@ set bs=2
 set ai
 set history=50
 set ruler
-set number
+set relativenumber
 
 set background=dark 
 
