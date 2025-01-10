@@ -2,6 +2,10 @@
 
 config=/home/vinzk/.config/hypr/hypridle.conf
 
+# Export environmental variables for notify-send
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS=$(sudo -u vinzk echo $DBUS_SESSION_BUS_ADDRESS)
+
 echo "Initializing hypridle.sh"
 
 # Check if hypridle is on.
