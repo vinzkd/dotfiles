@@ -9,7 +9,7 @@ padding-top = 30%
 result-spacing = 25
 num-results = 5
 font = /usr/share/fonts/jetbrains-mono/JetBrainsMonoNL-Regular.ttf
-font-size = 20
+font-size = 21
 hint-font = false
 ascii-input = true
 

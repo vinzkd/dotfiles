@@ -1,43 +1,44 @@
 /* Colors */
 
-@define-color backlight                 #FFFFFF;
+@define-color backlight                 #d3d9f0;
 @define-color battery                   #A6DA95;
 @define-color battery-charging          #e7ff87;
 @define-color battery-warning           #fc463c;
 @define-color bluetooth                 #d3d9f0;
 @define-color bluetooth-connected       #88ABF1;
 @define-color cpu                       #dd8794;
+@define-color disabled                  #777777;
 @define-color disk                      #f9d4ef;
-@define-color date                      #d3d9f0;
+@define-color date                      #FFFFFF;
 @define-color memory                    #bfa4ea;
 @define-color network                   #a4bbea;
 @define-color temperature               #a1e2d9;
 @define-color temperature-critical      #fc7f3c;
-@define-color time                      #d3d9f0;
-@define-color workspace                 #e3e8fc;
-@define-color workspace-active          #000000;
+@define-color time                      #FFFFFF;
+@define-color wireplumber               #d3d9f0;
+@define-color workspaces                #777777;
+@define-color workspaces-active         #e3e8fc;
 
-@define-color bg                        #0d0c12;
-@define-color bg-backlight              #0d0c12;
-@define-color bg-battery                #0d0c12;
+@define-color bg                        #000000;
+@define-color bg-backlight              #000000;
+@define-color bg-battery                #000000;
 @define-color bg-battery-charging       #e7ff87;
-@define-color bg-bluetooth              #0d0c12;
-@define-color bg-cpu                    #0d0c12;
-@define-color bg-disk                   #0d0c12;
-@define-color bg-date                   #0d0c12;
+@define-color bg-bluetooth              #000000;
+@define-color bg-cpu                    #000000;
+@define-color bg-disk                   #000000;
+@define-color bg-date                   #000000;
 @define-color bg-icon                   #313244;
-@define-color bg-memory                 #0d0c12;
-@define-color bg-network                #0d0c12;
-@define-color bg-notifications          #3b3f4f;
-@define-color bg-temperature            #0d0c12;
+@define-color bg-memory                 #000000;
+@define-color bg-network                #000000;
+@define-color bg-notifications          #000000;
+@define-color bg-temperature            #000000;
 @define-color bg-temperature-critical   #fc7f3c;
-@define-color bg-time                   #0d0c12;
-@define-color bg-wireplumber            #0d0c12;
-@define-color bg-workspaces             #0d0c12;
+@define-color bg-time                   #000000;
+@define-color bg-tray                   #444444;
+@define-color bg-wireplumber            #000000;
+@define-color bg-workspaces             #000000;
 @define-color bg-workspaces-button      #d3d9f0;
 
-
-/* Fonts */
 
 
 /* */
@@ -57,7 +58,7 @@ window {
 
 /*-----module groups----*/
 .modules-right {
-	background-color: rgba(13,12,18,0.0);
+	background-color: #000000;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px;
 }
@@ -89,14 +90,16 @@ window {
 /*-----modules indv----*/
 #workspaces {
 	margin: 0px 0px;
-	padding: 0px 4px 0px 0px;
+	padding: 0px 0px 0px 0px;
 	background-color: @bg-workspaces;
 }
 
 #workspaces button {
+        font-weight: bold;
 	margin: 0px 4px;
 	padding: 0px 0px;
-	color: @workspace;
+        border-bottom: 2px solid @bg-workspaces;
+	color: @workspaces;
 }
 
 #workspaces button.active {
@@ -104,8 +107,9 @@ window {
     margin: 0px 4px;
     padding: 0px 0px;
     border-radius: 0px;
-    color: @workspace-active;
-    background-color: @bg-workspaces-button;
+        border-bottom: 2px solid @workspaces-active;
+    color: @workspaces-active;
+    background-color: @bg-workspaces;
 }
 
 /*-----sway------*/
@@ -117,11 +121,12 @@ window {
     color: #000000;
     background-color: @bg-workspaces-button;
 }
+/*---------------*/
 
 #window {
         font-weight: bold;
 	margin: 0px 0px 0px 0px;
-	padding: 0px 20px; 
+	padding: 0px 18px; 
 }
 
 #cpu {
@@ -177,7 +182,7 @@ window {
 
 #bluetooth.off, 
 #bluetooth.disabled {
-        color: #787878;
+        color: @disabled;
 }
 
 #bluetooth,
@@ -219,7 +224,7 @@ window {
 }
 
 #network.disconnected {
-        color: #787878;
+        color: @disabled;
         background-color: @bg-network;
 }
 
@@ -230,7 +235,6 @@ window {
         border-radius: 20px;
     color: #FFFFFF;
     background-color: @bg-notifications;
-
 }
 
 #custom-space {
@@ -249,20 +253,23 @@ window {
 }
 
 #wireplumber {
-        color: #e0f9ff;
+        color: @wireplumber;
         background-color: @bg-wireplumber;
 }
 
 #wireplumber.muted {
-        color: #787878;
+        color: @disabled;
 }
 
 #tray {
-	margin: 0px 40px 0px 5px;
-        padding: 0px 12px;
-	background-color: rgba(18,22,32,0.8);
+	margin: 0px 5px 0px 5px;
+        padding: 0px 10px;
+        border-radius: 20px;
+        color: #FFFFFF;
+	background-color: @bg-tray;
 }
 
 #tray menu {
-	background-color: rgba(12,13,41,0.95);
+        color: #FFFAAA;
+	background-color: #ffffff;
 }

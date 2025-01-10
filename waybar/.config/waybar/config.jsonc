@@ -21,13 +21,14 @@
     "disk",
     "temperature",
     "network",
-    "backlight",
-    "battery",
     "bluetooth",
+    "backlight",
     "wireplumber",
+    "battery",
     //"clock",
     "clock#date",
     "clock#time",
+    "tray",
     "custom/notification"
   ],
 
@@ -55,7 +56,7 @@
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "tooltip-format": "{percent}% {icon}",
+    "tooltip-format": "{} {icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
   "battery": {
@@ -75,9 +76,9 @@
   },
   "bluetooth": {
     // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-    "format": "<span font='12'>󰂯</span> {status}",
-    "format-disabled": "<span font='12'>󰂲</span> ---", // an empty format will hide the module
-    "format-connected": "<span font='12'>󰂱</span> {num_connections}",
+    "format": "<span font='11'>󰂯</span> {status}",
+    "format-disabled": "<span font='11'>󰂲</span> ---", // an empty format will hide the module
+    "format-connected": "<span font='11'>󰂱</span> {num_connections}",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"

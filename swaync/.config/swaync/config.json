@@ -89,30 +89,6 @@
           "type": "toggle",
           "active": false,
           "command": "swaync-client -d"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "active": false,
-          "command": "notify-send 'Hey whatsup'"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "active": false,
-          "command": "/home/vinzk/.config/gammastep/toggle_gammastep.sh"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "active": false,
-          "command": "notify-send 'Hey whatsup'"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "active": false,
-          "command": "notify-send 'Hey whatsup'"
         }
       ]
     }
