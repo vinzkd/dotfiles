@@ -12,6 +12,7 @@
 @define-color date                      #FFFFFF;
 @define-color memory                    #bfa4ea;
 @define-color network                   #a4bbea;
+@define-color notifications             #ffffff;
 @define-color temperature               #a1e2d9;
 @define-color temperature-critical      #fc7f3c;
 @define-color time                      #FFFFFF;
@@ -34,7 +35,7 @@
 @define-color bg-temperature            #000000;
 @define-color bg-temperature-critical   #fc7f3c;
 @define-color bg-time                   #000000;
-@define-color bg-tray                   #444444;
+@define-color bg-tray                   #000000;
 @define-color bg-wireplumber            #000000;
 @define-color bg-workspaces             #000000;
 @define-color bg-workspaces-button      #d3d9f0;
@@ -229,11 +230,11 @@ window {
 }
 
 #custom-notification {
-    margin: 2px 0px;
+    margin: 0px 0px 0px 0px;
     padding: 0px 8px;
     border: 0px;
         border-radius: 20px;
-    color: #FFFFFF;
+    color: @notifications;
     background-color: @bg-notifications;
 }
 
@@ -262,8 +263,8 @@ window {
 }
 
 #tray {
-	margin: 0px 5px 0px 5px;
-        padding: 0px 10px;
+	margin: 0px 0px 0px 5px;
+        padding: 0px 5px 0px 10px;
         border-radius: 20px;
         color: #FFFFFF;
 	background-color: @bg-tray;
