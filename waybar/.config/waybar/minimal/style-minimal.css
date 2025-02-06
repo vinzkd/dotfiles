@@ -1,0 +1,276 @@
+/* Colors */
+
+@define-color backlight                 #d3d9f0;
+@define-color battery                   #A6DA95;
+@define-color battery-charging          #e7ff87;
+@define-color battery-warning           #fc463c;
+@define-color bluetooth                 #d3d9f0;
+@define-color bluetooth-connected       #88ABF1;
+@define-color cpu                       #dd8794;
+@define-color disabled                  #777777;
+@define-color disk                      #f9d4ef;
+@define-color date                      #FFFFFF;
+@define-color memory                    #bfa4ea;
+@define-color network                   #a4bbea;
+@define-color notifications             #ffffff;
+@define-color temperature               #a1e2d9;
+@define-color temperature-critical      #fc7f3c;
+@define-color time                      #FFFFFF;
+@define-color wireplumber               #d3d9f0;
+@define-color workspaces                #777777;
+@define-color workspaces-active         #e3e8fc;
+
+@define-color bg                        #000000;
+@define-color bg-backlight              #000000;
+@define-color bg-battery                #000000;
+@define-color bg-battery-charging       #e7ff87;
+@define-color bg-bluetooth              #000000;
+@define-color bg-cpu                    #000000;
+@define-color bg-disk                   #000000;
+@define-color bg-date                   #000000;
+@define-color bg-icon                   #313244;
+@define-color bg-memory                 #000000;
+@define-color bg-network                #000000;
+@define-color bg-notifications          #000000;
+@define-color bg-temperature            #000000;
+@define-color bg-temperature-critical   #fc7f3c;
+@define-color bg-time                   #000000;
+@define-color bg-tray                   #111111;
+@define-color bg-wireplumber            #000000;
+@define-color bg-workspaces             #000000;
+@define-color bg-workspaces-button      #d3d9f0;
+
+
+
+/* */
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: JetBrains Mono, Symbols Nerd Font;
+    font-size: 12px;
+}
+
+window {
+    margin: 0px 0px; 
+    padding: 0px 0px;
+    background-color: @bg;
+}
+
+/*-----module groups----*/
+.modules-right {
+	background-color: #000000;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px;
+}
+.modules-center {
+	background-color: rgba(13,12,18,0.0);
+    margin: 0px 0 0 0;
+}
+.modules-left {
+    margin: 0px 0 0 0px;
+	background-color: rgba(0,119,179,0.0);
+}
+
+/* Each module */
+#backlight,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#memory,
+#network,
+#temperature,
+#wireplumber {
+        padding: 0px 16px;
+        border-bottom: 2px solid @bg;
+        
+}
+
+/*-----modules indv----*/
+#workspaces {
+	margin: 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background-color: @bg-workspaces;
+}
+
+#workspaces button {
+        font-weight: bold;
+	margin: 0px 4px;
+	padding: 0px 0px;
+        border-bottom: 2px solid @bg-workspaces;
+	color: @workspaces;
+}
+
+#workspaces button.active {
+    font-weight: bold;
+    margin: 0px 4px;
+    padding: 0px 0px;
+    border-radius: 0px;
+        border-bottom: 2px solid @workspaces-active;
+    color: @workspaces-active;
+    background-color: @bg-workspaces;
+}
+
+/*-----sway------*/
+#workspaces button.focused {
+    font-weight: bold;
+    margin: 0px 4px;
+    padding: 0px 0px;
+    border-radius: 0px;
+    color: #000000;
+    background-color: @bg-workspaces-button;
+}
+/*---------------*/
+
+#window {
+        font-weight: bold;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 18px; 
+}
+
+#cpu {
+    color: @cpu;
+    background-color: @bg-cpu;
+}
+
+#disk {
+        color: @disk;
+        background-color: @bg-disk;
+}
+
+#custom-icon{
+    color: #F5BDE6;
+    background-color: @bg-icon;
+}
+
+#mpris {
+        margin: 0px 20px 0px 0px;
+        padding: 0px 0px;
+}
+
+#backlight {
+        color: @backlight;
+        background-color: @bg-backlight;
+}
+
+
+#battery {
+        color: @battery;
+        background-color: @bg-battery;
+}
+
+#battery.warning {
+        color: @battery-warning;
+        border-bottom: 2px solid @battery-warning;
+}
+
+#battery.charging {
+        color: @battery-charging;
+        background-color: @bg;
+        border-bottom: 2px solid @bg-battery-charging;
+}
+
+#bluetooth {
+        color: @bluetooth;
+}
+
+#bluetooth.connected {
+        color: @bluetooth-connected;
+        border-bottom: 2px solid @bluetooth-connected;
+}
+
+#bluetooth.off, 
+#bluetooth.disabled {
+        color: @disabled;
+}
+
+#bluetooth,
+#bluetooth.connected,
+#bluetooth.off,
+#bluetooth.disabled {
+        background-color: @bg-bluetooth;
+}
+
+#clock.date {
+       color: @date;
+       background-color: @bg-date;
+}
+
+#clock.time {
+       color: @time;
+       background-color: @bg-time;
+}
+
+#custom-icon {
+	margin: 0px 0px;
+	padding: 0px 10px;
+}
+
+#custom-separator {
+	margin: 0px 5px;
+  color: #888888;
+}
+
+
+#memory {
+        color: @memory;
+        background-color: @bg-memory;
+}
+
+#network {
+        color: @network;
+        background-color: @bg-network;
+}
+
+#network.disconnected {
+        color: @disabled;
+        background-color: @bg-network;
+}
+
+#custom-notification {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 8px;
+    border: 0px;
+        border-radius: 20px;
+    color: @notifications;
+    background-color: @bg-notifications;
+}
+
+#custom-space {
+        padding: 0px 10px;
+}
+
+#temperature {
+        color: @temperature;
+        background-color: @bg-temperature;
+
+}
+
+#temperature.critical {
+        color: @temperature-critical;
+        border-bottom: 2px solid @bg-temperature-critical;
+}
+
+#wireplumber {
+        color: @wireplumber;
+        background-color: @bg-wireplumber;
+}
+
+#wireplumber.muted {
+        color: @disabled;
+}
+
+#tray {
+	margin: 0px 0px 0px 5px;
+        padding: 0px 5px 0px 10px;
+        border-radius: 20px;
+        color: #FFFFFF;
+	background-color: @bg-tray;
+}
+
+#tray menu {
+        color: #FFFAAA;
+	background-color: #ffffff;
+}

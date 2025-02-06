@@ -31,6 +31,6 @@ elif [ $battery_capacity -lt 80 ]; then
     echo "${battery_capacity}% <span font='$symbol_font' rise ='1pt'>󰂁</span>"
 elif [ $battery_capacity -lt 90 ]; then
     echo "${battery_capacity}% <span font='$symbol_font' rise ='1pt'>󰂂</span>"
-elif [ $battery_capacity -lt 100 ]; then
+elif [ $battery_capacity -lt 101 ]; then
     echo "${battery_capacity}% <span font='$symbol_font' rise ='1pt'>󰁹</span>"
 fi

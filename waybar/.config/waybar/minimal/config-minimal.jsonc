@@ -1,0 +1,202 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+  "height": 28,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "cpu",
+    "memory",
+    "temperature",
+    "network",
+    "bluetooth",
+    "backlight",
+    "wireplumber",
+    "battery",
+    "custom/notification",
+  ],
+
+  // modules
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 80,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "<span color='#FF7D23'>󰈹</span>   $1",
+      "(.*) - zsh": "> [$1]"
+    },
+    "separate-outputs": true
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "9": "  ",
+      "10": "  ",
+      "11": " 󰇮 ",
+      "12": " 󰄜 "
+    },
+    "on-click": "activate",
+    "sort-by-number": true
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "tooltip-format": "{} {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+  },
+  "battery": {
+    "states": {
+      "warning": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-warning": "{icon} {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "bluetooth": {
+    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+    "format": "<span font='11'>󰂯</span> {status}",
+    "format-disabled": "<span font='11'>󰂲</span> ---", // an empty format will hide the module
+    "format-connected": "<span font='11'>󰂱</span> {num_connections}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+  "clock": {
+    "format": "{:%Y-%m-%d, %H:%M}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}"
+  },
+  "clock#time": {
+    "format": "<span font='11'>󰅐</span> {:%H:%M}",
+    "format-alt": "󰅐 {:%I:%M %p}",
+    "tooltip-format": "󰅐 {:%I:%M %p}"
+  },
+  "clock#date": {
+    "format": "󰃭 {:%m-%d-%y}",
+    "format-alt": "󰃭 {:%A, %B %d, %Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "cpu": {
+    "interval": 10,
+    "format": " {}%",
+    "max-length": 10
+  },
+  "custom/icon": {
+    "format": ""
+  },
+  "custom/space": {
+    "format": " "
+  },
+  "disk": {
+    "interval": 30,
+    "format": "󰉖 {specific_used:0.0f} GB",
+    "unit": "GB",
+    "path": "/"
+  },
+  "memory": {
+    "interval": 30,
+    "format": "󰆓 {}%"
+  },
+  "mpris": {
+    "format": "{player_icon} <b>{dynamic}</b>",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "dynamic-len": 50,
+    "player-icons": {
+      "default": " ",
+      "mpv": "🎵",
+      "firefox": "  "
+    },
+    "status-icons": {
+      "paused": "  "
+    }
+  },
+  "network": {
+    "format": "",
+    "format-wifi": "󰖩 {signalStrength}%",
+    "format-ethernet": "󰈀 {bandwidthTotalBytes}",
+    "format-disconnected": "󰞃 ---", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 70,
+    "format": "󱃃 {temperatureC}°C",
+    "format-critical": "󱃂 {temperatureC}°C"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  },
+  "wireplumber": {
+    "format": "<span font='13'>{icon}</span> <span rise='1pt'>{volume}%</span>",
+    "format-muted": "󰖁 ---",
+    "on-click": "helvum",
+    "format-icons": [
+      "󰕿",
+      "󰖀",
+      "󰕾"
+    ]
+  }
+}
