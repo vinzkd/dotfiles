@@ -5,7 +5,7 @@
   "margin-left": 0,
   "margin-right": 0,
   "margin-bottom": 0,
-  "height": 28,
+  "height": 25,
 
   "modules-left": [
     "hyprland/workspaces",
@@ -13,23 +13,24 @@
   ],
   
   "modules-center": [
+    "clock",
   ],
 
   "modules-right": [
     "cpu",
     "memory",
-    "disk",
-    "temperature",
+    //"custom/separator",
     "network",
     "bluetooth",
+    //"custom/separator",
+    "temperature",
     "backlight",
-    "wireplumber",
     "battery",
-    //"clock",
-    "clock#date",
-    "clock#time",
-    "tray",
-    "custom/notification"
+    "wireplumber",
+    //"clock#date",
+    //"clock#time",
+    //"custom/separator",
+    "custom/notification",
   ],
 
   // modules
@@ -37,8 +38,7 @@
     "format": "{}",
     "max-length": 80,
     "rewrite": {
-      "(.*) — Mozilla Firefox": "<span color='#FF7D23'>󰈹</span>   $1",
-      "(.*) - zsh": "> [$1]"
+      //"(.*) — Mozilla Firefox": "<span color='#FF7D23'>󰈹</span>   $1",
     },
     "separate-outputs": true
   },
@@ -46,7 +46,7 @@
     "format": "{icon}",
     "format-icons": {
       "9": "  ",
-      "10": "  ",
+      "10": "  ",
       "11": " 󰇮 ",
       "12": " 󰄜 "
     },
@@ -84,8 +84,29 @@
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   },
   "clock": {
-    "format": "󰥔 {:%m-%d-%y, %H:%M}",
-    "format-alt": "{:%A, %B %d, %Y (%R)}"
+    "format": "{:%Y-%m-%d   %I:%M %p}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
   "clock#time": {
     "format": "<span font='11'>󰅐</span> {:%H:%M}",
@@ -93,7 +114,7 @@
     "tooltip-format": "󰅐 {:%I:%M %p}"
   },
   "clock#date": {
-    "format": "󰃭 {:%m-%d-%y}",
+    "format": "󰃭 {:%Y-%m-%d}",
     "format-alt": "󰃭 {:%A, %B %d, %Y}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
@@ -128,6 +149,9 @@
   "custom/space": {
     "format": " "
   },
+  "custom/separator": {
+    "format": "|"
+  },
   "disk": {
     "interval": 30,
     "format": "󰉖 {specific_used:0.0f} GB",
@@ -153,7 +177,7 @@
   },
   "network": {
     "format": "",
-    "format-wifi": "󰖩 {signalStrength}%",
+    "format-wifi": "󰖩 {essid}",
     "format-ethernet": "󰈀 {bandwidthTotalBytes}",
     "format-disconnected": "󰞃 ---", //An empty format will hide the module.
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -200,7 +224,7 @@
     "format-icons": [
       "󰕿",
       "󰖀",
-      "󰕾"
+      "󰕾"
     ]
   }
 }

@@ -192,6 +192,9 @@ window {
 #bluetooth.disabled {
         background-color: @bg-bluetooth;
 }
+#clock {
+        font-weight: bold;
+}
 
 #clock.date {
        color: @date;

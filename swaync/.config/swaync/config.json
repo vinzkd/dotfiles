@@ -76,21 +76,6 @@
       "image-size": 96,
       "image-radius": 12
     },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": "",
-          "type": "toggle",
-          "active": true,
-          "command": "/home/vinzk/.config/gammastep/toggle_gammastep.sh"
-        },
-        {
-          "label": "",
-          "type": "toggle",
-          "active": false,
-          "command": "swaync-client -d"
-        }
-      ]
     }
   }
 }

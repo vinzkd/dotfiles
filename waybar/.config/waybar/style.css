@@ -1,11 +1,12 @@
 /* Colors */
 
-@define-color backlight                 #d3d9f0;
-@define-color battery                   #A6DA95;
+@define-color backlight                 #e3e8fc;
+@define-color battery                   #e3e8fc;
 @define-color battery-charging          #e7ff87;
 @define-color battery-warning           #fc463c;
 @define-color bluetooth                 #d3d9f0;
 @define-color bluetooth-connected       #88ABF1;
+@define-color clock                     #e3e8fc;
 @define-color cpu                       #dd8794;
 @define-color disabled                  #777777;
 @define-color disk                      #f9d4ef;
@@ -13,7 +14,7 @@
 @define-color memory                    #bfa4ea;
 @define-color network                   #a4bbea;
 @define-color notifications             #ffffff;
-@define-color temperature               #a1e2d9;
+@define-color temperature               #e3e8fc;
 @define-color temperature-critical      #fc7f3c;
 @define-color time                      #FFFFFF;
 @define-color wireplumber               #d3d9f0;
@@ -35,11 +36,10 @@
 @define-color bg-temperature            #000000;
 @define-color bg-temperature-critical   #fc7f3c;
 @define-color bg-time                   #000000;
-@define-color bg-tray                   #000000;
+@define-color bg-tray                   #111111;
 @define-color bg-wireplumber            #000000;
 @define-color bg-workspaces             #000000;
 @define-color bg-workspaces-button      #d3d9f0;
-
 
 
 /* */
@@ -47,7 +47,7 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: JetBrains Mono, Symbols Nerd Font;
+    font-family: JetBrains Mono, Font Awesome v4 Compatibility, Symbols Nerd Font;
     font-size: 12px;
 }
 
@@ -83,8 +83,9 @@ window {
 #network,
 #temperature,
 #wireplumber {
+        font-weight: bold;
         padding: 0px 16px;
-        border-bottom: 2px solid @bg;
+        border-bottom: 0px solid @bg;
         
 }
 
@@ -119,8 +120,9 @@ window {
     margin: 0px 4px;
     padding: 0px 0px;
     border-radius: 0px;
-    color: #000000;
-    background-color: @bg-workspaces-button;
+        border-bottom: 2px solid @workspaces-active;
+    color: @workspaces-active;
+    background-color: @bg-workspaces;
 }
 /*---------------*/
 
@@ -163,13 +165,13 @@ window {
 
 #battery.warning {
         color: @battery-warning;
-        border-bottom: 2px solid @battery-warning;
+        border-bottom: 0px solid @battery-warning;
 }
 
 #battery.charging {
         color: @battery-charging;
         background-color: @bg;
-        border-bottom: 2px solid @bg-battery-charging;
+        border-bottom: 0px solid @bg-battery-charging;
 }
 
 #bluetooth {
@@ -178,7 +180,7 @@ window {
 
 #bluetooth.connected {
         color: @bluetooth-connected;
-        border-bottom: 2px solid @bluetooth-connected;
+        border-bottom: 0px solid @bluetooth-connected;
 }
 
 #bluetooth.off, 
@@ -192,6 +194,14 @@ window {
 #bluetooth.disabled {
         background-color: @bg-bluetooth;
 }
+
+#clock {
+        margin: 0px 0px;
+        padding: 0px 0px;
+       color: @clock;
+       background-color: @bg-date;
+}
+
 
 #clock.date {
        color: @date;
@@ -209,8 +219,9 @@ window {
 }
 
 #custom-separator {
+        font-size: 16px;
 	margin: 0px 5px;
-  color: #888888;
+        color: #888888;
 }
 
 
@@ -250,7 +261,7 @@ window {
 
 #temperature.critical {
         color: @temperature-critical;
-        border-bottom: 2px solid @bg-temperature-critical;
+        border-bottom: 0px solid @bg-temperature-critical;
 }
 
 #wireplumber {
