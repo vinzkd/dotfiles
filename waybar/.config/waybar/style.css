@@ -128,9 +128,10 @@ window {
 
 #window {
         font-weight: bold;
-	margin: 0px 0px 0px 0px;
-	padding: 0px 18px; 
-}
+        margin: 0px 0px 0px 0px;
+        padding: 0px 18px; 
+        color: #FFFFFF; 
+  }
 
 #cpu {
     color: @cpu;
