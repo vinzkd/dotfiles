@@ -1,7 +1,7 @@
 drun-launch = true
 
-width = 50%
-height = 55%
+width = 45%
+height = 50%
 corner-radius = 4
 border-width = 1
 outline-width = 0
@@ -17,3 +17,13 @@ ascii-input = true
 background-color = #0d0c12
 border-color = #a5bfc9
 selection-color = #b0b4eb
+
+### Text layout
+
+prompt-text = "tofi: "
+
+text-cursor-style = bar
+text-cursor-color = #FFFFFF
+text-cursor-background = #000000
+text-cursor-thickness = 2
+
