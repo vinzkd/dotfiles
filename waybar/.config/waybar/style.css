@@ -4,6 +4,7 @@
 @define-color battery                   #e3e8fc;
 @define-color battery-charging          #e7ff87;
 @define-color battery-warning           #fc463c;
+@define-color border                    #e3e8fc;
 @define-color bluetooth                 #d3d9f0;
 @define-color bluetooth-connected       #88ABF1;
 @define-color clock                     #e3e8fc;
@@ -45,8 +46,7 @@
 /* */
 
 * {
-    border: none;
-    border-radius: 0px;
+    border: 10px;
     font-family: JetBrains Mono, Font Awesome v4 Compatibility, Symbols Nerd Font;
     font-size: 12px;
 }
