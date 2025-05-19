@@ -5,17 +5,14 @@
   "margin-left": 0,
   "margin-right": 0,
   "margin-bottom": 0,
-  "height": 25,
-
+  "height": 28,
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
   ],
-  
   "modules-center": [
-    "clock",
+    "clock"
   ],
-
   "modules-right": [
     "cpu",
     "memory",
@@ -32,7 +29,6 @@
     //"custom/separator",
     "custom/notification",
   ],
-
   // modules
   "hyprland/window": {
     "format": "{}",
@@ -45,10 +41,7 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "9": "  ",
-      "10": "  ",
-      "11": " 󰇮 ",
-      "12": " 󰄜 "
+      "11": " 󰇮 "
     },
     "on-click": "activate",
     "sort-by-number": true
@@ -57,7 +50,17 @@
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
     "tooltip-format": "{} {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
   },
   "battery": {
     "states": {
