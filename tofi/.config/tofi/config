@@ -1,29 +1,31 @@
 drun-launch = true
 
 width = 45%
-height = 50%
+height = 45%
 corner-radius = 4
 border-width = 1
 outline-width = 0
-padding-left = 6%
-padding-top = 6%
+padding-left = 2%
+padding-top = 2%
 result-spacing = 16
-num-results = 7
+num-results = 8
 font = /usr/share/fonts/jetbrains-mono/JetBrainsMonoNL-Regular.ttf
-font-size = 20
+font-size = 18
 hint-font = false
 ascii-input = true
 
 background-color = #0d0c12
 border-color = #a5bfc9
-selection-color = #b0b4eb
+selection-color = #92dee8
 
 ### Text layout
 
-prompt-text = "tofi: "
+prompt-text = "run: "
 
-text-cursor-style = bar
+text-cursor-style = underscore
 text-cursor-color = #FFFFFF
 text-cursor-background = #000000
-text-cursor-thickness = 2
+text-cursor-thickness = 3
+
+text-cursor = false
 
