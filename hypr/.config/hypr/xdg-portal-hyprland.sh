@@ -11,3 +11,6 @@ logger 'xdg-desktop-portal-hyprland started'
 sleep 2
 /usr/libexec/xdg-desktop-portal &
 logger 'xdg-desktop-portal started'
+sleep 3
+/usr/libexec/xdg-desktop-portal-gtk &
+logger 'xdg-desktop-portal-gtk started'
