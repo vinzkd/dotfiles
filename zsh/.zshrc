@@ -39,6 +39,7 @@ alias pispace="vinzk@192.168.1.210"
 alias pispace2="vinzk@192.168.1.213"
 alias fetch="fastfetch"
 alias sudo="doas"
+alias sysupdate="/home/vinzk/.scripts/gentoo_update.sh"
 
 eval "$(zoxide init zsh)"         # zoxide
 

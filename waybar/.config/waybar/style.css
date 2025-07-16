@@ -37,6 +37,7 @@
 @define-color bg-temperature            #000000;
 @define-color bg-temperature-critical   #fc7f3c;
 @define-color bg-time                   #000000;
+@define-color bg-tooltip                #000000;
 @define-color bg-tray                   #111111;
 @define-color bg-wireplumber            #000000;
 @define-color bg-workspaces             #000000;
@@ -55,6 +56,10 @@ window {
     margin: 0px 0px; 
     padding: 0px 0px;
     background-color: @bg;
+}
+
+tooltip {
+    background-color: @bg-tooltip;
 }
 
 /*-----module groups----*/

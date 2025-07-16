@@ -1,25 +1,32 @@
 drun-launch = true
 
+
+### Window settings
 width = 45%
 height = 45%
-corner-radius = 4
+corner-radius = 5
 border-width = 1
 outline-width = 0
 padding-left = 2%
 padding-top = 2%
-result-spacing = 16
+result-spacing = 15
 num-results = 8
+
+
+### Font
 font = /usr/share/fonts/jetbrains-mono/JetBrainsMonoNL-Regular.ttf
 font-size = 18
 hint-font = false
 ascii-input = true
 
-background-color = #0d0c12
+
+### Colors
+background-color = #0a090c
 border-color = #a5bfc9
-selection-color = #92dee8
+selection-color = #b2c4ea
+
 
 ### Text layout
-
 prompt-text = "run: "
 
 text-cursor-style = underscore
