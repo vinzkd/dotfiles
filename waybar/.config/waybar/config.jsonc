@@ -8,6 +8,7 @@
   "height": 28,
   "modules-left": [
     "hyprland/workspaces",
+    "custom/separator",
     "hyprland/window"
   ],
   "modules-center": [
@@ -27,7 +28,7 @@
     //"clock#date",
     //"clock#time",
     //"custom/separator",
-    "custom/notification",
+    "custom/notification"
   ],
   // modules
   "hyprland/window": {
@@ -60,7 +61,7 @@
       "",
       "",
       ""
-    ],
+    ]
   },
   "battery": {
     "states": {
@@ -163,7 +164,7 @@
   },
   "memory": {
     "interval": 30,
-    "format": "󰆓 {}%"
+    "format": " {}%"
   },
   "mpris": {
     "format": "{player_icon} <b>{dynamic}</b>",

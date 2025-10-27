@@ -31,15 +31,21 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
-# Aliases
+## Aliases
 alias ls="eza --long --no-permissions"
 alias cd="z"
 alias homespace="vinzk@192.168.1.75"
 alias pispace="vinzk@192.168.1.210"
 alias pispace2="vinzk@192.168.1.213"
 alias fetch="fastfetch"
-alias sudo="doas"
+#alias sudo="doas"
+alias snvim="sudoedit"
 alias sysupdate="/home/vinzk/.scripts/gentoo_update.sh"
+
+## Python
+alias venv="source ~/.venv/bin/activate"
+alias pipv="~/.venv/bin/pip"
+alias pythonv="~/.venv/bin/python"
 
 eval "$(zoxide init zsh)"         # zoxide
 
@@ -52,5 +58,3 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 source /usr/share/fzf/key-bindings.zsh
-
-export PATH=$PATH:/home/vinzk/.spicetify
