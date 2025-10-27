@@ -88,7 +88,7 @@ tooltip {
 #network,
 #temperature,
 #wireplumber {
-        font-weight: bold;
+        /* font-weight: bold; */
         padding: 0px 16px;
         border-bottom: 0px solid @bg;
         
@@ -103,7 +103,7 @@ tooltip {
 
 #workspaces button {
         font-weight: bold;
-	margin: 0px 4px;
+	margin: 0px 3px;
 	padding: 0px 0px;
         border-bottom: 2px solid @bg-workspaces;
 	color: @workspaces;
@@ -111,7 +111,7 @@ tooltip {
 
 #workspaces button.active {
     font-weight: bold;
-    margin: 0px 4px;
+    margin: 0px 3px;
     padding: 0px 0px;
     border-radius: 0px;
         border-bottom: 2px solid @workspaces-active;
@@ -122,7 +122,7 @@ tooltip {
 /*-----sway------*/
 #workspaces button.focused {
     font-weight: bold;
-    margin: 0px 4px;
+    margin: 0px 3px;
     padding: 0px 0px;
     border-radius: 0px;
         border-bottom: 2px solid @workspaces-active;
@@ -132,9 +132,9 @@ tooltip {
 /*---------------*/
 
 #window {
-        font-weight: bold;
+        /* font-weight: bold; */
         margin: 0px 0px 0px 0px;
-        padding: 0px 18px; 
+        padding: 0px 10px; 
         color: #FFFFFF; 
   }
 
@@ -227,7 +227,7 @@ tooltip {
 #custom-separator {
         font-size: 16px;
 	margin: 0px 5px;
-        color: #888888;
+        color: #333333;
 }
 
 

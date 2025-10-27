@@ -14,5 +14,6 @@ else
   echo "hypridle is stopped"
   echo "Starting hypridle"
   notify-send -t 5000 -e "Screen idle on"
-  hypridle -c $config
+  hypridle -c "$config" >/dev/null 2>&1 &
+  disown
 fi
