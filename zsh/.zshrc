@@ -42,7 +42,7 @@ alias fetch="fastfetch"
 alias snvim="sudoedit"
 alias sysupdate="/home/vinzk/.scripts/gentoo_update.sh"
 
-## Python
+### Python
 alias venv="source ~/.venv/bin/activate"
 alias pipv="~/.venv/bin/pip"
 alias pythonv="~/.venv/bin/python"
