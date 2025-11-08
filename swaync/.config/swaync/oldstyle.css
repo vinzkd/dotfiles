@@ -6,7 +6,7 @@
 @define-color noti-bg rgb(13, 12, 18);
 @define-color noti-bg-opaque rgb(13, 12, 18);
 @define-color noti-bg-darker rgb(38, 38, 38);
-@define-color noti-bg-hover rgb(36, 36, 36);
+@define-color noti-bg-hover rgb(56, 56, 56);
 @define-color noti-bg-hover-opaque rgb(56, 56, 56);
 @define-color noti-bg-focus rgba(48, 48, 48, 1.0);
 @define-color noti-close-bg #0d0c12;

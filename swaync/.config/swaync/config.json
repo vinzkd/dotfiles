@@ -50,8 +50,8 @@
   "widgets": [
     "inhibitors",
     "title",
-    "notifications",
     "mpris",
+    "notifications",
     "buttons-grid"
   ],
   "widget-config": {
@@ -76,6 +76,6 @@
       "image-size": 96,
       "image-radius": 12
     },
-    }
   }
+}
 }
