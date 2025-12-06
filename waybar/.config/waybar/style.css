@@ -1,13 +1,13 @@
 /* Colors */
 
-@define-color backlight                 #e3e8fc;
-@define-color battery                   #e3e8fc;
+@define-color backlight                 #cdd6f4;
+@define-color battery                   #cdd6f4;
 @define-color battery-charging          #e7ff87;
 @define-color battery-warning           #fc463c;
 @define-color border                    #e3e8fc;
-@define-color bluetooth                 #d3d9f0;
+@define-color bluetooth                 #cdd6f4;
 @define-color bluetooth-connected       #88ABF1;
-@define-color clock                     #e3e8fc;
+@define-color clock                     #cdd6f4;
 @define-color cpu                       #dd8794;
 @define-color disabled                  #777777;
 @define-color disk                      #f9d4ef;
@@ -15,12 +15,13 @@
 @define-color memory                    #bfa4ea;
 @define-color network                   #a4bbea;
 @define-color notifications             #ffffff;
-@define-color temperature               #e3e8fc;
+@define-color temperature               #cdd6f4;
 @define-color temperature-critical      #fc7f3c;
-@define-color time                      #FFFFFF;
-@define-color wireplumber               #d3d9f0;
+@define-color time                      #cdd6f4;
+@define-color wireplumber               #cdd6f4;
+@define-color window                    #fc4f4f;
 @define-color workspaces                #777777;
-@define-color workspaces-active         #e3e8fc;
+@define-color workspaces-active         #cdd6f4;
 
 @define-color bg                        #09090A;
 @define-color bg-backlight              #000000;
@@ -47,9 +48,9 @@
 /* */
 
 * {
-    border: 10px;
-    font-family: JetBrains Mono, Font Awesome v4 Compatibility, Symbols Nerd Font;
-    font-size: 12px;
+        border: 10px;
+        font-family: JetBrains Mono, Font Awesome v4 Compatibility, Symbols Nerd Font;
+        font-size: 12px;
 }
 
 window {
@@ -65,15 +66,15 @@ tooltip {
 /*-----module groups----*/
 .modules-right {
 	background-color: #000000;
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px;
 }
 .modules-center {
 	background-color: rgba(13,12,18,0.0);
-    margin: 0px 0 0 0;
+        margin: 0px 0 0 0;
 }
 .modules-left {
-    margin: 0px 0 0 0px;
+        margin: 0px 0 0 0px;
 	background-color: rgba(0,119,179,0.0);
 }
 
@@ -91,7 +92,7 @@ tooltip {
         /* font-weight: bold; */
         padding: 0px 16px;
         border-bottom: 0px solid @bg;
-        
+        color: @text;
 }
 
 /*-----modules indv----*/
@@ -110,13 +111,13 @@ tooltip {
 }
 
 #workspaces button.active {
-    font-weight: bold;
-    margin: 0px 3px;
-    padding: 0px 0px;
-    border-radius: 0px;
+        font-weight: bold;
+        margin: 0px 3px;
+        padding: 0px 0px;
+        border-radius: 0px;
         border-bottom: 2px solid @workspaces-active;
-    color: @workspaces-active;
-    background-color: @bg-workspaces;
+        color: @workspaces-active;
+        background-color: @bg-workspaces;
 }
 
 /*-----sway------*/
@@ -139,8 +140,8 @@ tooltip {
   }
 
 #cpu {
-    color: @cpu;
-    background-color: @bg-cpu;
+        color: @cpu;
+        background-color: @bg-cpu;
 }
 
 #disk {
