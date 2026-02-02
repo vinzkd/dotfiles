@@ -8,8 +8,10 @@
   "height": 28,
   "modules-left": [
     "hyprland/workspaces",
+    "niri/workspaces",
     "custom/separator",
-    "hyprland/window"
+    "hyprland/window",
+    "niri/window"
   ],
   "modules-center": [
     "clock"
@@ -39,6 +41,13 @@
     },
     "separate-outputs": true
   },
+  "niri/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "🌎 $1",
+      "(.*) - zsh": "> [$1]"
+    }
+  },
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -46,6 +55,19 @@
     },
     "on-click": "activate",
     "sort-by-number": true
+  },
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      // Named workspaces
+      // (you need to configure them in niri)
+      "browser": "",
+      "discord": "",
+      "chat": "<b></b>",
+      // Icons by state
+      "active": "",
+      "default": ""
+    }
   },
   "backlight": {
     "device": "intel_backlight",
