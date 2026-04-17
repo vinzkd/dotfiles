@@ -50,7 +50,7 @@ input {
     trackpoint {
         // off
         // natural-scroll
-        // accel-speed 0.2
+        accel-speed 0.1
         // accel-profile "flat"
         // scroll-method "on-button-down"
         // scroll-button 273
@@ -82,7 +82,7 @@ output "eDP-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@120.030"
+    mode "1920x1080@120"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -101,6 +101,12 @@ output "eDP-1" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     position x=1280 y=0
+}
+output "DP-3" {
+    mode "1440x900@60"
+    scale 1
+    transform "normal"
+    position x=0 y=0
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -141,10 +147,16 @@ layout {
 }
 
 // Startup apps
-spawn-at-startup "/home/vinzk/.scripts/startup.sh"
+spawn-at-startup "gentoo-pipewire-launcher"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "udiskie"
+spawn-at-startup "gammastep"
+spawn-at-startup "thunderbird"
+spawn-at-startup "firefox"
 
 // Niri-specific apps
 spawn-at-startup "xwayland-satellite"
+
 
 hotkey-overlay {
     skip-at-startup
@@ -215,6 +227,8 @@ binds {
     Mod+A { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     Mod+Shift+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
     Mod+Shift+A { spawn-sh "qs -c noctalia-shell ipc call notifications toggleHistory"; }
+    Mod+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+
 
 
     // Apps 
@@ -261,8 +275,6 @@ binds {
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
     
-    // cliphist
-    Mod+V { spawn-sh "cliphist list | rofi -dmenu | cliphist decode | wl-copy"; }
 
     Mod+Shift+Q repeat=false { close-window; }
 
@@ -450,7 +462,6 @@ binds {
     Mod+Ctrl+V { switch-focus-between-floating-and-tiling; }
 
     Mod+W { toggle-column-tabbed-display; }     // Windows in this column will appear as vertical tabs, rather than stacked on top of each other.
-
 
 
     Print { spawn "flameshot" "gui"; }
