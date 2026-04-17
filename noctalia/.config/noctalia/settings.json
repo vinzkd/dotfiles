@@ -75,7 +75,7 @@
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": false,
-        "widgetSpacing": 10,
+        "widgetSpacing": 8,
         "widgets": {
             "center": [
                 {
@@ -128,11 +128,15 @@
                     ],
                     "chevronColor": "none",
                     "colorizeIcons": false,
-                    "drawerEnabled": true,
-                    "hidePassive": false,
+                    "drawerEnabled": false,
+                    "hidePassive": true,
                     "id": "Tray",
                     "pinned": [
                     ]
+                },
+                {
+                    "iconColor": "none",
+                    "id": "WallpaperSelector"
                 },
                 {
                     "compactMode": false,
@@ -157,17 +161,21 @@
                     "usePadding": false
                 },
                 {
-                    "hideWhenZero": false,
-                    "hideWhenZeroUnread": false,
+                    "displayMode": "alwaysShow",
                     "iconColor": "none",
-                    "id": "NotificationHistory",
-                    "showUnreadBadge": true,
-                    "unreadBadgeColor": "primary"
+                    "id": "Network",
+                    "textColor": "primary"
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
+                    "id": "Bluetooth",
+                    "textColor": "none"
                 },
                 {
                     "deviceNativePath": "__default__",
                     "displayMode": "icon-always",
-                    "hideIfIdle": false,
+                    "hideIfIdle": true,
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
@@ -181,20 +189,12 @@
                     "textColor": "none"
                 },
                 {
-                    "applyToAllMonitors": false,
-                    "displayMode": "alwaysShow",
+                    "hideWhenZero": false,
+                    "hideWhenZeroUnread": false,
                     "iconColor": "none",
-                    "id": "Brightness",
-                    "textColor": "none"
-                },
-                {
-                    "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "noctalia",
-                    "id": "ControlCenter",
-                    "useDistroLogo": false
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true,
+                    "unreadBadgeColor": "primary"
                 }
             ]
         }
@@ -337,7 +337,7 @@
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": false,
-        "animationDisabled": false,
+        "animationDisabled": true,
         "animationSpeed": 2,
         "autoStartAuth": false,
         "avatarImage": "/home/vinzk/.face/Icon.png",
@@ -416,7 +416,7 @@
         "enabled": true,
         "fadeDuration": 5,
         "lockCommand": "",
-        "lockTimeout": 660,
+        "lockTimeout": 900,
         "resumeLockCommand": "",
         "resumeScreenOffCommand": "",
         "resumeSuspendCommand": "",
@@ -434,7 +434,7 @@
         "name": "Huntersville, NC",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
-        "showWeekNumberInCalendar": false,
+        "showWeekNumberInCalendar": true,
         "use12hourFormat": false,
         "useFahrenheit": false,
         "weatherEnabled": true,
@@ -448,7 +448,7 @@
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
-        "networkPanelView": "ethernet",
+        "networkPanelView": "wifi",
         "wifiDetailsViewMode": "grid"
     },
     "nightLight": {
